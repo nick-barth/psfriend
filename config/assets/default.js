@@ -5,8 +5,6 @@ module.exports = {
     lib: {
       css: [
         // bower:css
-        'public/lib/bootstrap/dist/css/bootstrap.css',
-        'public/lib/bootstrap/dist/css/bootstrap-theme.css'
         // endbower
       ],
       js: [
@@ -16,7 +14,6 @@ module.exports = {
         'public/lib/angular-animate/angular-animate.js',
         'public/lib/angular-messages/angular-messages.js',
         'public/lib/angular-ui-router/release/angular-ui-router.js',
-        'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
         'public/lib/angular-file-upload/dist/angular-file-upload.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js'
         // endbower
@@ -25,9 +22,6 @@ module.exports = {
     },
     css: [
       'modules/*/client/css/*.css'
-    ],
-    less: [
-      'modules/*/client/less/*.less'
     ],
     sass: [
       'modules/*/client/scss/*.scss'
@@ -48,7 +42,6 @@ module.exports = {
     templates: ['build/templates.js']
   },
   server: {
-    gruntConfig: ['gruntfile.js'],
     gulpConfig: ['gulpfile.js'],
     allJS: ['server.js', 'config/**/*.js', 'modules/*/server/**/*.js'],
     models: 'modules/*/server/models/**/*.js',

@@ -75,7 +75,6 @@ gulp.task('watch', function () {
   gulp.watch(defaultAssets.client.js, ['eslint']).on('change', plugins.livereload.changed);
   gulp.watch(defaultAssets.client.css, ['csslint']).on('change', plugins.livereload.changed);
   gulp.watch(defaultAssets.client.sass, ['sass', 'csslint']).on('change', plugins.livereload.changed);
-  gulp.watch(defaultAssets.client.less, ['less', 'csslint']).on('change', plugins.livereload.changed);
 
   if (process.env.NODE_ENV === 'production') {
     gulp.watch(defaultAssets.server.gulpConfig, ['templatecache', 'eslint']);
@@ -174,17 +173,6 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('./modules/'));
 });
 
-// Less task
-gulp.task('less', function () {
-  return gulp.src(defaultAssets.client.less)
-    .pipe(plugins.less())
-    .pipe(plugins.autoprefixer())
-    .pipe(plugins.rename(function (file) {
-      file.dirname = file.dirname.replace(path.sep + 'less', path.sep + 'css');
-    }))
-    .pipe(gulp.dest('./modules/'));
-});
-
 // Imagemin task
 gulp.task('imagemin', function () {
   return gulp.src(defaultAssets.client.img)
@@ -275,44 +263,6 @@ gulp.task('templatecache', function () {
     .pipe(gulp.dest('build'));
 });
 
-// Mocha tests task
-gulp.task('mocha', function (done) {
-  // Open mongoose connections
-  var mongoose = require('./config/lib/mongoose.js');
-  var testSuites = changedTestFiles.length ? changedTestFiles : testAssets.tests.server;
-  var error;
-
-  // Connect mongoose
-  mongoose.connect(function () {
-    mongoose.loadModels();
-    // Run the tests
-    gulp.src(testSuites)
-      .pipe(plugins.mocha({
-        reporter: 'spec',
-        timeout: 10000
-      }))
-      .on('error', function (err) {
-        // If an error occurs, save it
-        error = err;
-      })
-      .on('end', function () {
-        // When the tests are done, disconnect mongoose and pass the error state back to gulp
-        mongoose.disconnect(function () {
-          done(error);
-        });
-      });
-  });
-
-});
-
-// Karma test runner task
-gulp.task('karma', function (done) {
-  new KarmaServer({
-    configFile: __dirname + '/karma.conf.js',
-    singleRun: true
-  }, done).start();
-});
-
 // Drops the MongoDB database, used in e2e testing
 gulp.task('dropdb', function (done) {
   // Use mongoose configuration
@@ -338,54 +288,14 @@ gulp.task('webdriver_update', webdriver_update);
 // seleniumServerJar in your protractor.conf.js
 gulp.task('webdriver_standalone', webdriver_standalone);
 
-// Protractor test runner task
-gulp.task('protractor', ['webdriver_update'], function () {
-  gulp.src([])
-    .pipe(protractor({
-      configFile: 'protractor.conf.js'
-    }))
-    .on('end', function() {
-      console.log('E2E Testing complete');
-      // exit with success.
-      process.exit(0);
-    })
-    .on('error', function(err) {
-      console.error('E2E Tests failed:');
-      console.error(err);
-      process.exit(1);
-    });
-});
-
 // Lint CSS and JavaScript files.
 gulp.task('lint', function (done) {
-  runSequence('less', 'sass', ['csslint', 'eslint'], done);
+  runSequence('sass', ['csslint', 'eslint'], done);
 });
 
 // Lint project files and minify them into two production files.
 gulp.task('build', function (done) {
   runSequence('env:dev', 'wiredep:prod', 'lint', ['uglify', 'cssmin'], done);
-});
-
-// Run the project tests
-gulp.task('test', function (done) {
-  runSequence('env:test', 'test:server', 'karma', 'nodemon', 'protractor', done);
-});
-
-gulp.task('test:server', function (done) {
-  runSequence('env:test', ['copyLocalEnvConfig', 'makeUploadsDir', 'dropdb'], 'lint', 'mocha', done);
-});
-
-// Watch all server files for changes & run server tests (test:server) task on changes
-gulp.task('test:server:watch', function (done) {
-  runSequence('test:server', 'watch:server:run-tests', done);
-});
-
-gulp.task('test:client', function (done) {
-  runSequence('env:test', 'lint', 'dropdb', 'karma', done);
-});
-
-gulp.task('test:e2e', function (done) {
-  runSequence('env:test', 'lint', 'dropdb', 'nodemon', 'protractor', done);
 });
 
 // Run the project in development mode
