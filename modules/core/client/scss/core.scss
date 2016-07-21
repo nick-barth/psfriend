@@ -1,3 +1,5 @@
+@import "../../../utilities/global.scss";
+
 html {
  font-family: 'Roboto', sans-serif;
  background: url(../img/background/symphony.png);
@@ -10,6 +12,7 @@ body {
 }
 
 a {
+	color:$peach;
 	text-decoration:none;
 }
 

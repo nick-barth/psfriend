@@ -1,17 +1,19 @@
-<div class="login-box">
-	<div class="left">
-		<h1>Sign up</h1>
-		<input type="text" name="email" placeholder="E-mail" />
-		<input type="password" name="password" placeholder="Password" />
-		<input type="submit" name="signup_submit" value="Sign me up" />
+<div class="login">
+	<div class="login__left">
+		<div class="login__header">Sign up</div>
+		<form name="vm.userForm" ng-submit="vm.signup(vm.userForm.$valid)">
+			<input type="email" name="email" ng-model="vm.credentials.email" placeholder="Email" required/>
+			<input type="password" name="password" ng-model="vm.credentials.password" placeholder="Password" uib-popover="{{vm.getPopoverMsg()}}" uib-popover-trigger="focus" password-validator required />
+			<input type="submit" name="signup_submit" value="Sign me up" />
+		</form>
 	</div>
-	<div class="right">
-		<span class="loginwith">Sign in with<br />social network</span>
-		<button ng-click="vm.callOauthProvider('/api/auth/facebook')" class="social-signin facebook">Log in with facebook</button>
-		<button ng-click="vm.callOauthProvider('/api/auth/twitter')" class="social-signin twitter">Log in with Twitter</button>
-		<button ng-click="vm.callOauthProvider('/api/auth/google')" class="social-signin google">Log in with Google+</button>
+	<div class="login__right">
+		<span class="login__with">Sign in with<br />social network</span>
+		<button ng-click="vm.callOauthProvider('/api/auth/facebook')" class="login__social facebook">Log in with facebook</button>
+		<button ng-click="vm.callOauthProvider('/api/auth/twitter')" class="login__social twitter">Log in with Twitter</button>
+		<button ng-click="vm.callOauthProvider('/api/auth/google')" class="login__social google">Log in with Google+</button>
 	</div>
-	<div class="or">OR</div>
+	<div class="login__or">OR</div>
 </div>
 
 

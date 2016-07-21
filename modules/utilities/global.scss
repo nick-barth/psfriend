@@ -1,5 +1,11 @@
 $black: #000;
 $white: #fff;
+$grey: #CCC;
+$grey-text: #6E6E6E;
+$peach: #FFCBB9;
+
+
+$max-width: 80em;
 
 
 @mixin box-shadow($level) {

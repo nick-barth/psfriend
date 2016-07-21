@@ -1,16 +1,20 @@
 <div class="navbar" ng-controller="HeaderController as vm">
-	<a ui-sref="home" class="navbar-brand">p.s. Friend</a>
-	<ul ng-hide="vm.authentication.user">
-		<li ui-sref-active="active">
-			<a ui-sref="authentication.signup">Sign Up</a>
-		</li>
-		<li ui-sref-active="active">
-			<a ui-sref="authentication.signin">Sign In</a>
-		</li>
-	</ul>
-	<ul ng-show="vm.authentication.user">
-		<li>
-			<a href="/api/auth/signout" target="_self">Signout</a>
-		</li>
-	</ul>
+	<div class="navbar__container">
+		<a ui-sref="home" class="navbar__brand">p.s. Friend</a>
+		<ul ng-hide="vm.authentication.user">
+			<li>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="authentication.signup">Sign Up</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="authentication.signin">Sign In</a>
+			</li>
+		</ul>
+		<ul ng-show="vm.authentication.user">
+			<li>
+				<a href="/api/auth/signout" target="_self">Signout</a>
+			</li>
+		</ul>
+	</div>
 </div>
