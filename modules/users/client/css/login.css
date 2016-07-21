@@ -5,7 +5,7 @@
   max-width: 80em;
   height: 40em;
   border-radius: 2px;
-  background: #fff;
+  background: #FFFAF0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 
 .login__header {
@@ -37,6 +37,7 @@ input[type="email"] {
   width: 90%;
   height: 32px;
   border: none;
+  background-color: #FFFAF0;
   color: #6E6E6E;
   border-bottom: 1px solid #CCC;
   font-family: 'Roboto', sans-serif;
@@ -109,7 +110,7 @@ input[type="submit"]:active {
   display: block;
   margin-bottom: 40px;
   font-size: 28px;
-  color: #fff;
+  color: #FFFAF0;
   text-align: center; }
 
 .login__social {
@@ -118,7 +119,7 @@ input[type="submit"]:active {
   height: 3.6em;
   border: none;
   border-radius: 2px;
-  color: #fff;
+  color: #FFFAF0;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   -webkit-transition: 0.2s ease;
