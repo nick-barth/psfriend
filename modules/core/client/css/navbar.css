@@ -2,14 +2,18 @@
   width: 100%;
   display: table;
   background-color: #fff;
-  height: 5em; }
+  height: 5em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
   .navbar ul {
     display: table-cell;
     vertical-align: middle; }
     .navbar ul li {
       display: table-cell;
       text-decoration: none;
-      padding: 0; }
+      padding: 0;
+      float: right;
+      padding-left: 1em;
+      padding-right: 1em; }
 
 .navbar-brand {
   display: table-cell;

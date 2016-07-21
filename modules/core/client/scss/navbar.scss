@@ -1,10 +1,11 @@
-@import "../../utilities/variables.scss";
+@import "../../../utilities/global.scss";
 
 .navbar {
 	width:100%;
 	display:table;
 	background-color: $white;
 	height: 5em;
+	@include box-shadow(1);
 
 	ul {
 		display: table-cell;
@@ -13,6 +14,9 @@
 			display:table-cell;
 			text-decoration: none;
 			padding:0;
+			float: right;
+			padding-left: 1em;
+			padding-right: 1em;
 		}
 	}
 }

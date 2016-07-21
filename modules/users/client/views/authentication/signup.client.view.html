@@ -1,3 +1,23 @@
+<div class="login-box">
+	<div class="left">
+		<h1>Sign up</h1>
+		<input type="text" name="email" placeholder="E-mail" />
+		<input type="password" name="password" placeholder="Password" />
+		<input type="submit" name="signup_submit" value="Sign me up" />
+	</div>
+	<div class="right">
+		<span class="loginwith">Sign in with<br />social network</span>
+		<button ng-click="vm.callOauthProvider('/api/auth/facebook')" class="social-signin facebook">Log in with facebook</button>
+		<button ng-click="vm.callOauthProvider('/api/auth/twitter')" class="social-signin twitter">Log in with Twitter</button>
+		<button ng-click="vm.callOauthProvider('/api/auth/google')" class="social-signin google">Log in with Google+</button>
+	</div>
+	<div class="or">OR</div>
+</div>
+
+
+
+
+<!--
 <div>
   <h3 class="col-md-12 text-center">Or sign up using your email</h3>
   <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
