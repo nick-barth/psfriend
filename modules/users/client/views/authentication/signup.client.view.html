@@ -3,9 +3,25 @@
 		<div class="login__header">Sign up</div>
 		<form name="vm.userForm" ng-submit="vm.signup(vm.userForm.$valid)">
 			<input type="email" name="email" ng-model="vm.credentials.email" placeholder="Email" required/>
-			<input type="password" name="password" ng-model="vm.credentials.password" placeholder="Password" uib-popover="{{vm.getPopoverMsg()}}" uib-popover-trigger="focus" password-validator required />
-			<input type="submit" name="signup_submit" value="Sign me up" />
+			<div ng-messages="vm.userForm.email.$error" role="alert">
+				<p class="help-block error-text" ng-message="required">Email address is required.</p>
+				<p class="help-block error-text" ng-message="email">Email address is invalid.</p>
+			</div>
+			<input type="password" name="password" ng-model="vm.credentials.password" placeholder="Password" required />
+			<div ng-messages="vm.userForm.password.$error" role="alert">
+				<p class="help-block error-text" ng-message="required">Password is required.</p>
+				<div ng-repeat="passwordError in passwordErrors">
+					<p class="help-block error-text" ng-show="vm.userForm.password.$error.requirements">{{passwordError}}</p>
+				</div>
+			</div>
+			<input type="submit" value="Sign me up" />
 		</form>
+		<div class="login__text">
+			<a ui-sref="authentication.signin">Already have an account? Login.</a>
+		</div>
+		<div ng-show="vm.error" class="text-center text-danger">
+			<strong ng-bind="vm.error"></strong>
+		</div>
 	</div>
 	<div class="login__right">
 		<span class="login__with">Sign in with<br />social network</span>

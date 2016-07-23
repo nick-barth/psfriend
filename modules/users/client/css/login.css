@@ -33,7 +33,6 @@ input[type="email"] {
   display: block;
   box-sizing: border-box;
   margin-bottom: 2em;
-  padding: .6em;
   width: 90%;
   height: 32px;
   border: none;
@@ -125,6 +124,12 @@ input[type="submit"]:active {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
   cursor: pointer; }
+
+.login__text {
+  padding-top: .8em; }
+  .login__text a {
+    text-decoration: none;
+    color: #6E6E6E; }
 
 button.login__social:hover,
 button.login__social:focus {

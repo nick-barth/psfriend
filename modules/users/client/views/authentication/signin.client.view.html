@@ -1,3 +1,38 @@
+<div class="login">
+	<div class="login__left">
+		<div class="login__header">Welcome back</div>
+		<form name="vm.userForm" ng-submit="vm.signup(vm.userForm.$valid)">
+			<input type="email" name="email" ng-model="vm.credentials.email" placeholder="Email" required/>
+			<div ng-messages="vm.userForm.username.$error" role="alert">
+				<p class="help-block error-text" ng-message="required">Username is required.</p>
+			</div>
+			<input type="password" name="password" ng-model="vm.credentials.password" required />
+			<div ng-messages="vm.userForm.password.$error" role="alert">
+				<p class="help-block error-text" ng-message="required">Password is required.</p>
+			</div>
+			<input type="submit" name="signup_submit" value="Sign me up" />
+		</form>
+		<div class="login__text">
+			<a ui-sref="authentication.signup"> Don't have an account? Signup.</a>
+		</div>
+		<div class="login__text">
+			<a ui-sref="password.forgot">Forgot your password? No problem.</a>
+		</div>
+		<uib-alert type="danger" ng-show="vm.error" class="text-center text-danger">
+			<span ng-bind="vm.error"></span>
+		</uib-alert>
+	</div>
+	<div class="login__right">
+		<span class="login__with">Sign in with<br />social network</span>
+		<button ng-click="vm.callOauthProvider('/api/auth/facebook')" class="login__social facebook">Log in with facebook</button>
+		<button ng-click="vm.callOauthProvider('/api/auth/twitter')" class="login__social twitter">Log in with Twitter</button>
+		<button ng-click="vm.callOauthProvider('/api/auth/google')" class="login__social google">Log in with Google+</button>
+	</div>
+	<div class="login__or">OR</div>
+</div>
+
+
+<!--
 <div>
   <h3 class="col-md-12 text-center">Or with your account</h3>
   <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
