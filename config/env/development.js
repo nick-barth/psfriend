@@ -74,7 +74,6 @@ module.exports = {
     options: {
       logResults: process.env.MONGO_SEED_LOG_RESULTS !== 'false',
       seedUser: {
-        username: process.env.MONGO_SEED_USER_USERNAME || 'user',
         provider: 'local',
         email: process.env.MONGO_SEED_USER_EMAIL || 'user@localhost.com',
         firstName: 'User',
@@ -83,7 +82,6 @@ module.exports = {
         roles: ['user']
       },
       seedAdmin: {
-        username: process.env.MONGO_SEED_ADMIN_USERNAME || 'admin',
         provider: 'local',
         email: process.env.MONGO_SEED_ADMIN_EMAIL || 'admin@localhost.com',
         firstName: 'Admin',
