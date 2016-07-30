@@ -7,6 +7,7 @@ var path = require('path'),
 	errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
 	mongoose = require('mongoose'),
 	passport = require('passport'),
+	bodyParser = require('body-parser'),
 	User = mongoose.model('User');
 
 // URLs for which user can't be redirected on signin
@@ -28,6 +29,7 @@ exports.signup = function (req, res) {
 
 	// Then save the user
 	user.save(function (err) {
+		console.log(err);
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
@@ -52,6 +54,7 @@ exports.signup = function (req, res) {
  * Signin after passport authentication
  */
 exports.signin = function (req, res, next) {
+	console.log(req.body);
 	passport.authenticate('local', function (err, user, info) {
 		if (err || !user) {
 			res.status(400).send(info);
@@ -154,7 +157,6 @@ exports.saveOAuthUserProfile = function (req, providerUserProfile, done) {
 
 					User.findUniqueUsername(possibleUsername, null, function (availableUsername) {
 						user = new User({
-							email: providerUserProfile.email,
 							provider: providerUserProfile.provider,
 							providerData: providerUserProfile.providerData
 						});

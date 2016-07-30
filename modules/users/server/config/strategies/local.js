@@ -8,21 +8,23 @@ var passport = require('passport'),
 	User = require('mongoose').model('User');
 
 module.exports = function () {
+	console.log('local');
 	// Use local strategy
 	passport.use(new LocalStrategy({
-		emailField: 'email',
+		usernameField: 'email',
 		passwordField: 'password'
 	},
-	function (username, password, done) {
+	function (email, password, done) {
+		console.log(email, password);
 		User.findOne({
-			username: username.toLowerCase()
+			email: email.toLowerCase()
 		}, function (err, user) {
 			if (err) {
 				return done(err);
 			}
-			if (!user || !user.authenticate(password)) {
+			if (!email || !user.authenticate(password)) {
 				return done(null, false, {
-					message: 'Invalid username or password'
+					message: 'Invalid email or password'
 				});
 			}
 
