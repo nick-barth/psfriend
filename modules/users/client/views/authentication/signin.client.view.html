@@ -1,7 +1,7 @@
 <div class="login">
 	<div class="login__left">
 		<div class="login__header">Welcome back</div>
-		<form name="vm.userForm" ng-submit="vm.signup(vm.userForm.$valid)">
+		<form name="vm.userForm" ng-submit="vm.signin(vm.userForm.$valid)">
 			<input type="email" name="email" ng-model="vm.credentials.email" placeholder="Email" required/>
 			<div ng-messages="vm.userForm.username.$error" role="alert">
 				<p class="help-block error-text" ng-message="required">Username is required.</p>
@@ -10,7 +10,12 @@
 			<div ng-messages="vm.userForm.password.$error" role="alert">
 				<p class="help-block error-text" ng-message="required">Password is required.</p>
 			</div>
-			<input type="submit" name="signup_submit" value="Sign me up" />
+
+			<uib-alert type="danger" ng-show="vm.error" class="text-center text-danger">
+				<span ng-bind="vm.error"></span>
+			</uib-alert>
+
+			<input type="submit" name="signup_submit" value="Sign in" />
 		</form>
 		<div class="login__text">
 			<a ui-sref="authentication.signup"> Don't have an account? Signup.</a>
@@ -18,9 +23,6 @@
 		<div class="login__text">
 			<a ui-sref="password.forgot">Forgot your password? No problem.</a>
 		</div>
-		<uib-alert type="danger" ng-show="vm.error" class="text-center text-danger">
-			<span ng-bind="vm.error"></span>
-		</uib-alert>
 	</div>
 	<div class="login__right">
 		<span class="login__with">Sign in with<br />social network</span>

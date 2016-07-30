@@ -19,8 +19,8 @@ var _ = require('lodash'),
 	pngquant = require('imagemin-pngquant'),
 	path = require('path'),
 	endOfLine = require('os').EOL,
-	webdriver_update = require('gulp-protractor').webdriver_update,
-	webdriver_standalone = require('gulp-protractor').webdriver_standalone;
+	webdriverUpdate = require('gulp-protractor').webdriverUpdate,
+	webdriverStandalone = require('gulp-protractor').webdriverStandalone;
 
 // Local settings
 var changedTestFiles = [];
@@ -45,8 +45,7 @@ gulp.task('nodemon', function () {
 	return plugins.nodemon({
 		script: 'server.js',
 		nodeArgs: ['--debug'],
-		ext: 'js,html',
-		watch: _.union(defaultAssets.server.views, defaultAssets.server.allJS, defaultAssets.server.config)
+		ext: 'js,html'
 	});
 });
 
@@ -57,83 +56,8 @@ gulp.task('nodemon-debug', function () {
 		script: 'server.js',
 		nodeArgs: ['--debug'],
 		ext: 'js,html',
-		verbose: true,
-		watch: _.union(defaultAssets.server.views, defaultAssets.server.allJS, defaultAssets.server.config)
+		verbose: true
 	});
-});
-
-// Watch Files For Changes
-gulp.task('watch', function () {
-	// Start livereload
-	plugins.livereload.listen();
-
-	// Add watch rules
-	gulp.watch(defaultAssets.server.views).on('change', plugins.livereload.changed);
-	gulp.watch(defaultAssets.server.allJS, ['eslint']).on('change', plugins.livereload.changed);
-	gulp.watch(defaultAssets.client.js, ['eslint']).on('change', plugins.livereload.changed);
-	gulp.watch(defaultAssets.client.css, ['csslint']).on('change', plugins.livereload.changed);
-	gulp.watch(defaultAssets.client.sass, ['sass', 'csslint']).on('change', plugins.livereload.changed);
-
-	if (process.env.NODE_ENV === 'production') {
-		gulp.watch(defaultAssets.server.gulpConfig, ['templatecache', 'eslint']);
-		gulp.watch(defaultAssets.client.views, ['templatecache']).on('change', plugins.livereload.changed);
-	} else {
-		gulp.watch(defaultAssets.server.gulpConfig, ['eslint']);
-		gulp.watch(defaultAssets.client.views).on('change', plugins.livereload.changed);
-	}
-});
-
-// Watch server test files
-gulp.task('watch:server:run-tests', function () {
-	// Start livereload
-	plugins.livereload.listen();
-
-	// Add Server Test file rules
-	gulp.watch([testAssets.tests.server, defaultAssets.server.allJS], ['test:server']).on('change', function (file) {
-		changedTestFiles = [];
-
-		// iterate through server test glob patterns
-		_.forEach(testAssets.tests.server, function (pattern) {
-			// determine if the changed (watched) file is a server test
-			_.forEach(glob.sync(pattern), function (f) {
-				var filePath = path.resolve(f);
-
-				if (filePath === path.resolve(file.path)) {
-					changedTestFiles.push(f);
-				}
-			});
-		});
-
-		plugins.livereload.changed();
-	});
-});
-
-// CSS linting task
-gulp.task('csslint', function (done) {
-	return gulp.src(defaultAssets.client.css)
-		.pipe(plugins.csslint('.csslintrc'))
-		.pipe(plugins.csslint.reporter())
-		.pipe(plugins.csslint.reporter(function (file) {
-			if (!file.csslint.errorCount) {
-				done();
-			}
-		}));
-});
-
-// ESLint JS linting task
-gulp.task('eslint', function () {
-	var assets = _.union(
-		defaultAssets.server.gulpConfig,
-		defaultAssets.server.allJS,
-		defaultAssets.client.js,
-		testAssets.tests.server,
-		testAssets.tests.client,
-		testAssets.tests.e2e
-	);
-
-	return gulp.src(assets)
-		.pipe(plugins.eslint())
-		.pipe(plugins.eslint.format());
 });
 
 // JS minifying task
@@ -281,12 +205,12 @@ gulp.task('dropdb', function (done) {
 });
 
 // Downloads the selenium webdriver
-gulp.task('webdriver_update', webdriver_update);
+gulp.task('webdriverUpdate', webdriverUpdate);
 
 // Start the standalone selenium server
 // NOTE: This is not needed if you reference the
 // seleniumServerJar in your protractor.conf.js
-gulp.task('webdriver_standalone', webdriver_standalone);
+gulp.task('webdriverStandalone', webdriverStandalone);
 
 // Lint CSS and JavaScript files.
 gulp.task('lint', function (done) {
@@ -295,20 +219,20 @@ gulp.task('lint', function (done) {
 
 // Lint project files and minify them into two production files.
 gulp.task('build', function (done) {
-	runSequence('env:dev', 'wiredep:prod', 'lint', ['uglify', 'cssmin'], done);
+	runSequence('env:dev', 'wiredep:prod', ['uglify', 'cssmin'], done);
 });
 
 // Run the project in development mode
 gulp.task('default', function (done) {
-	runSequence('env:dev', ['copyLocalEnvConfig', 'makeUploadsDir'], 'lint', ['nodemon', 'watch'], done);
+	runSequence('env:dev', ['copyLocalEnvConfig', 'makeUploadsDir'], ['nodemon'], done);
 });
 
 // Run the project in debug mode
 gulp.task('debug', function (done) {
-	runSequence('env:dev', ['copyLocalEnvConfig', 'makeUploadsDir'], 'lint', ['nodemon-debug', 'watch'], done);
+	runSequence('env:dev', ['copyLocalEnvConfig', 'makeUploadsDir'], ['nodemon-debug'], done);
 });
 
 // Run the project in production mode
 gulp.task('prod', function (done) {
-	runSequence(['copyLocalEnvConfig', 'makeUploadsDir', 'templatecache'], 'build', 'env:prod', 'lint', ['nodemon', 'watch'], done);
+	runSequence(['copyLocalEnvConfig', 'makeUploadsDir', 'templatecache'], 'build', 'env:prod', ['nodemon'], done);
 });

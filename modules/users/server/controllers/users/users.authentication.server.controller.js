@@ -4,48 +4,48 @@
  * Module dependencies
  */
 var path = require('path'),
-  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
-  mongoose = require('mongoose'),
-  passport = require('passport'),
-  User = mongoose.model('User');
+	errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
+	mongoose = require('mongoose'),
+	passport = require('passport'),
+	User = mongoose.model('User');
 
 // URLs for which user can't be redirected on signin
 var noReturnUrls = [
-  '/authentication/signin',
-  '/authentication/signup'
+	'/authentication/signin',
+	'/authentication/signup'
 ];
 
 /**
  * Signup
  */
 exports.signup = function (req, res) {
-  // For security measurement we remove the roles from the req.body object
-  delete req.body.roles;
+	// For security measurement we remove the roles from the req.body object
+	delete req.body.roles;
 
-  // Init user and add missing fields
-  var user = new User(req.body);
-  user.provider = 'local';
+	// Init user and add missing fields
+	var user = new User(req.body);
+	user.provider = 'local';
 
-  // Then save the user
-  user.save(function (err) {
-	  if (err) {
-      return res.status(400).send({
-        message: errorHandler.getErrorMessage(err)
-      });
-    } else {
-      // Remove sensitive data before login
-      user.password = undefined;
-      user.salt = undefined;
+	// Then save the user
+	user.save(function (err) {
+		if (err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		} else {
+			// Remove sensitive data before login
+			user.password = undefined;
+			user.salt = undefined;
 
-      req.login(user, function (err) {
-        if (err) {
-          res.status(400).send(err);
-        } else {
-          res.json(user);
-        }
-      });
-    }
-  });
+			req.login(user, function (err) {
+				if (err) {
+					res.status(400).send(err);
+				} else {
+					res.json(user);
+				}
+			});
+		}
+	});
 };
 
 /**
