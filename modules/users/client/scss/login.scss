@@ -137,9 +137,15 @@ input[type="submit"]:active {
 .login__text {
 	padding-top:.8em;
 	a {
-		text-decoration:none;
 		color:$grey-text;
 	}
+	a:hover {
+		color:$blue;
+	}
+}
+
+.text-danger {
+	display: block;
 }
 
 button.login__social:hover,

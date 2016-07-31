@@ -14,7 +14,6 @@ module.exports = function () {
 		passwordField: 'password'
 	},
 	function (email, password, done) {
-		console.log(email, password);
 		User.findOne({
 			email: email.toLowerCase()
 		}, function (err, user) {

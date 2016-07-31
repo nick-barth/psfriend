@@ -17,6 +17,10 @@ a {
 	text-decoration:none;
 }
 
+a:hover {
+	color:$blue;
+}
+
 [ng\:cloak],
 [ng-cloak],
 [x-ng-cloak],

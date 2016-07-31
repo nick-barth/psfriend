@@ -8,8 +8,11 @@ body {
   margin: 0; }
 
 a {
-  color: #FFCBB9;
+  color: #ef9e9f;
   text-decoration: none; }
+
+a:hover {
+  color: #9BD7D5; }
 
 [ng\:cloak],
 [ng-cloak],

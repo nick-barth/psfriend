@@ -9,30 +9,30 @@ var config = require('../config'),
   chalk = require('chalk'),
   seed = require('./seed');
 
-function seedDB() {
-  if (config.seedDB && config.seedDB.seed) {
-    console.log(chalk.bold.red('Warning:  Database seeding is turned on'));
-    seed.start();
-  }
+function seedDB () {
+	if (config.seedDB && config.seedDB.seed) {
+		console.log(chalk.bold.red('Warning:  Database seeding is turned on'));
+		seed.start();
+	}
 }
 
 // Initialize Models
 mongoose.loadModels(seedDB);
 
-module.exports.loadModels = function loadModels() {
+module.exports.loadModels = function loadModels () {
   mongoose.loadModels();
-};
+	};
 
-module.exports.init = function init(callback) {
+module.exports.init = function init (callback) {
   mongoose.connect(function (db) {
     // Initialize express
     var app = express.init(db);
     if (callback) callback(app, db, config);
 
-  });
-};
+			});
+	};
 
-module.exports.start = function start(callback) {
+module.exports.start = function start (callback) {
   var _this = this;
 
   _this.init(function (app, db, config) {
@@ -54,8 +54,8 @@ module.exports.start = function start(callback) {
       console.log('--');
 
       if (callback) callback(app, db, config);
-    });
+					});
 
-  });
+			});
 
 };
