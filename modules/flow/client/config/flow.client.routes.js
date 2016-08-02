@@ -2,34 +2,36 @@
 	'use strict';
 
 	angular
-	.module('users.routes')
+	.module('flow.routes')
 	.config(routeConfig);
 
-	routeConfig.$inject = ['$stateProvider'];
-
-	function routeConfig ($stateProvider) {
-		// Users state routing
+	function routeConfig ($stateProvider, $urlRouterProvider) {
+		//
+		// For any unmatched url, redirect to /state1
+		$urlRouterProvider.otherwise('/card');
+		//
+		// Now set up the states
 		$stateProvider
-		.state('flow', {
-			url: '/flow',
-			templateUrl: 'modules/flow/client/views/card/card.client.view.html',
-			controller: 'CardController',
-			controllerAs: 'vm'
-		}).state('flow.gift', {
-			url: '/flow/gift',
-			templateUrl: 'modules/users/client/views/settings/edit-profile.client.view.html',
-			controller: 'GiftController',
-			controllerAs: 'vm',
-			data: {
-				pageTitle: 'Gift'
+		.state('card', {
+			url: '/card',
+			templateUrl: 'modules/flow/client/views/card/card.client.view.html'
+		})
+		.state('state1.list', {
+			url: '/list',
+			templateUrl: 'partials/state1.list.html',
+			controller: function ($scope) {
+				$scope.items = ['A', 'List', 'Of', 'Items'];
 			}
-		}).state('flow.personal', {
-			url: '/flow/personal',
-			templateUrl: 'modules/users/client/views/settings/edit-profile.client.view.html',
-			controller: 'PersonalController',
-			controllerAs: 'vm',
-			data: {
-				pageTitle: 'Personal'
+		})
+		.state('state2', {
+			url: '/state2',
+			templateUrl: 'partials/state2.html'
+		})
+		.state('state2.list', {
+			url: '/list',
+			templateUrl: 'partials/state2.list.html',
+			controller: function ($scope) {
+				$scope.things = ['A', 'Set', 'Of', 'Things'];
 			}
 		});
 	}

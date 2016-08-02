@@ -3,16 +3,16 @@
 
   var applicationModuleName = 'mean';
 
-  var service = {
-    applicationModuleName: applicationModuleName,
-    applicationModuleVendorDependencies: ['ngResource', 'ngAnimate', 'ngMessages', 'ui.router', 'angularFileUpload'],
-    registerModule: registerModule
-  };
+	var service = {
+		applicationModuleName: applicationModuleName,
+		applicationModuleVendorDependencies: ['ngResource', 'ngAnimate', 'ngMessages', 'ui.router', 'angularFileUpload'],
+		registerModule: registerModule
+	};
 
-  window.ApplicationConfiguration = service;
+	window.ApplicationConfiguration = service;
 
-  // Add a new vertical module
-  function registerModule(moduleName, dependencies) {
+	// Add a new vertical module
+	function registerModule(moduleName, dependencies) {
     // Create angular module
     angular.module(moduleName, dependencies || []);
 
