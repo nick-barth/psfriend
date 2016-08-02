@@ -23,7 +23,7 @@ var AddressSchema = new Schema({
 		type: String,
 	},
 	zip: {
-		typer: Number,
+		type: Number,
 	},
 	country: {
 		type: String,
