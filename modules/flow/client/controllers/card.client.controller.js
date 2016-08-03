@@ -5,9 +5,9 @@ angular
 	.module('card')
 	.controller('CardController', CardController);
 
-CardController.$inject = ['$scope', '$state', '$http'];
+CardController.$inject = ['$scope', '$state', '$http', 'ProductService'];
 
-function CardController ($scope, $state, $http) {
-	//runs on load of flow
+function CardController ($scope, $state, $http, ProductService) {
+	console.log(ProductService);
 }
 }());
