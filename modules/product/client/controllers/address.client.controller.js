@@ -2,7 +2,7 @@
 'use strict';
 
 angular
-	.module('card')
+	.module('product')
 	.controller('AddressController', AddressController);
 
 AddressController.$inject = ['$scope', '$state', '$http', 'ProductService'];

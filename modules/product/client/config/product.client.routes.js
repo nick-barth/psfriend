@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-	.module('flow.routes')
+	.module('product.routes')
 	.config(routeConfig);
 
 	function routeConfig ($stateProvider, $urlRouterProvider) {
@@ -14,13 +14,13 @@
 		$stateProvider
 		.state('card', {
 			url: '/card',
-			templateUrl: 'modules/flow/client/views/card.client.view.html',
+			templateUrl: 'modules/product/client/views/card.client.view.html',
 			controller: 'CardController',
 			controllerAs: 'cc'
 		})
 		.state('address', {
 			url: '/address',
-			templateUrl: 'modules/flow/client/views/address.client.view.html',
+			templateUrl: 'modules/product/client/views/address.client.view.html',
 			controller: 'AddressController',
 			controllerAs: 'ac'
 		});
