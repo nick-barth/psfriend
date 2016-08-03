@@ -21,12 +21,15 @@ module.exports = {
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
     css: [
+			'public/lib/bootstrap/dist/css/bootstrap.min.css',
       'modules/*/client/css/*.css'
     ],
     sass: [
-      'modules/*/client/scss/*.scss'
+      'modules/*/client/scss/*.scss',
+			'public/lib/bootstrap-sass/assets/bootstrap.scss'
     ],
     js: [
+			'public/lib/bootstrap/dist/js/bootstrap.min.js',
       'modules/core/client/app/config.js',
       'modules/core/client/app/init.js',
       'modules/*/client/*.js',

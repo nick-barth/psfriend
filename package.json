@@ -27,6 +27,7 @@
     "angular-ui-router": "^0.3.1",
     "async": "~1.5.2",
     "body-parser": "~1.15.0",
+    "bootstrap": "^3.3.7",
     "bower": "~1.7.7",
     "cfenv": "~1.0.3",
     "chalk": "~1.1.1",
