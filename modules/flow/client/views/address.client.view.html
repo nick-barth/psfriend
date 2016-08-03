@@ -2,7 +2,7 @@
 	<form>
 		<div class="row">
 			<div class="col-sm-6">
-				<input ng-model="text" type="text" class="form-control" placeholder="">
+				<input ng-model="foobar" type="text" class="form-control" placeholder="">
 			</div>
 			<div class="col-sm-6">
 				<input ng-model="text2" type="text" class="form-control" placeholder="Text input">
@@ -16,6 +16,6 @@
 				<input ng-model="text4" type="text" class="form-control" placeholder="Text input">
 			</div>
 		</div>
-		<a href="./address">Next </a>
+		<a ng-click="next()" href="./address">Next </a>
 	</form>
 </div>

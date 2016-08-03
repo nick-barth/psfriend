@@ -8,6 +8,11 @@ angular
 CardController.$inject = ['$scope', '$state', '$http', 'ProductService'];
 
 function CardController ($scope, $state, $http, ProductService) {
-	console.log(ProductService);
+	$scope.foobar = ProductService.product.theme;
+
+	$scope.next = function () {
+		console.log('wow');
+		ProductService.product.theme = $scope.foobar;
+	};
 }
 }());

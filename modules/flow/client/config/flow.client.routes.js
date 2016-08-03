@@ -14,15 +14,15 @@
 		$stateProvider
 		.state('card', {
 			url: '/card',
-			templateUrl: 'modules/flow/client/views/card/card.client.view.html',
+			templateUrl: 'modules/flow/client/views/card.client.view.html',
 			controller: 'CardController',
 			controllerAs: 'cc'
 		})
 		.state('address', {
 			url: '/address',
-			templateUrl: 'modules/flow/client/views/card/card.client.view.html',
+			templateUrl: 'modules/flow/client/views/address.client.view.html',
 			controller: 'AddressController',
-			controllerAs: 'cc'
+			controllerAs: 'ac'
 		});
 	}
 }());
