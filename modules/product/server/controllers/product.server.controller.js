@@ -13,7 +13,18 @@ var path = require('path'),
  */
 exports.add = function (req, res) {
 
-	//code to add
+	let product = new Product(req.body);
+
+	product.save(function (err) {
+		console.log(err);
+		if (err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		} else {
+			console.log('success');
+		}
+	});
 
 	return res.sendStatus(200);
 };
