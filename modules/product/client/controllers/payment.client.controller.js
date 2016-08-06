@@ -8,9 +8,14 @@ angular
 PaymentController.$inject = ['$scope', '$state', '$http', 'ProductService'];
 
 function PaymentController ($scope, $state, $http, ProductService) {
+	$scope.ProductService = ProductService.product;
 
 	$scope.submit = function () {
-		console.log($scope.foobar);
+		$http.post('/api/product/add', $scope.ProductService)
+			.success(function (response) {
+				console.log('subscription added');
+			});
 	};
+
 }
 }());

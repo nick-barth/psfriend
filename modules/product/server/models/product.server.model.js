@@ -7,13 +7,33 @@ var mongoose = require('mongoose'),
 		Schema = mongoose.Schema;
 
 /**
+* Card Schema
+*/
+var CardSchema = new Schema({
+	name: {
+		type: String,
+	},
+	theme: {
+		type: String,
+	},
+	art: {
+		type: String
+	},
+	sender: {
+		type: String,
+	}
+});
+/**
  * Address Schema
  */
 var AddressSchema = new Schema({
-	street: {
+	name: {
 		type: String,
 	},
-	street2: {
+	line1: {
+		type: String,
+	},
+	line2: {
 		type: String
 	},
 	city: {
@@ -39,8 +59,8 @@ var ProductSchema = new Schema({
 	},
 	active: Boolean,
 	process: String,
-	theme: String,
 	note: String,
+	card: [CardSchema],
 	address: [AddressSchema],
 	updated: {
 		type: Date
