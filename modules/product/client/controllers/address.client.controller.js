@@ -14,7 +14,7 @@ function AddressController ($scope, $state, $http, ProductService) {
 
 	$scope.backLink = '/onboard/card';
 
-	$scope.next = function () {
+	$scope.save = function () {
 		ProductService.product.address = $scope.address;
 	};
 }

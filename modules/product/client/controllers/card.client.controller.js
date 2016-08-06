@@ -12,7 +12,7 @@ function CardController ($scope, $state, $http, ProductService) {
 
 	$scope.nextLink = 'onboard/address';
 
-	$scope.next = function () {
+	$scope.save = function () {
 		ProductService.product.card = $scope.card;
 	};
 }
