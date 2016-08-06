@@ -8,11 +8,10 @@ angular
 AddressController.$inject = ['$scope', '$state', '$http', 'ProductService'];
 
 function AddressController ($scope, $state, $http, ProductService) {
-	console.log(ProductService);
+	$scope.address = ProductService.product.address;
 
 	$scope.next = function () {
-		console.log('wow');
-		ProductService.product.theme = $scope.foobar;
+		ProductService.product.address = $scope.address;
 	};
 }
 }());

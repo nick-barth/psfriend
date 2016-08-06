@@ -16,13 +16,16 @@
 			url: '/card',
 			templateUrl: 'modules/product/client/views/card.client.view.html',
 			controller: 'CardController',
-			controllerAs: 'cc'
 		})
 		.state('address', {
 			url: '/address',
 			templateUrl: 'modules/product/client/views/address.client.view.html',
 			controller: 'AddressController',
-			controllerAs: 'ac'
+		})
+		.state('payment', {
+			url: '/payment',
+			templateUrl: 'modules/product/client/views/payment.client.view.html',
+			controller: 'PaymentController',
 		});
 	}
 }());

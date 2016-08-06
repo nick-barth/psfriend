@@ -2,20 +2,28 @@
 	<form>
 		<div class="row">
 			<div class="col-sm-6">
-				<input ng-model="foobar" type="text" class="form-control" placeholder="">
+				<input ng-model="address.name" type="text" class="form-control" placeholder="">
 			</div>
 			<div class="col-sm-6">
-				<input ng-model="text2" type="text" class="form-control" placeholder="Text input">
+				<input ng-model="address.line1" type="text" class="form-control" placeholder="Text input">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-6">
-				<input ng-model="text3" type="text" class="form-control" placeholder="Text input">
+				<input ng-model="address.line2" type="text" class="form-control" placeholder="Text input">
 			</div>
 			<div class="col-sm-6">
-				<input ng-model="text4" type="text" class="form-control" placeholder="Text input">
+				<input ng-model="address.state" type="text" class="form-control" placeholder="Text input">
 			</div>
 		</div>
-		<a ng-click="next()" href="./address">Next </a>
+		<div class="row">
+			<div class="col-sm-6">
+				<input ng-model="address.city" type="text" class="form-control" placeholder="Text input">
+			</div>
+			<div class="col-sm-6">
+				<input ng-model="address.zip" type="text" class="form-control" placeholder="Text input">
+			</div>
+		</div>
+		<a ng-click="next()" href="./payment">Next </a>
 	</form>
 </div>

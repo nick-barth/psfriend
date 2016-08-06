@@ -8,8 +8,21 @@ angular
 function ProductService () {
 	return {
 		product: {
-			theme: 'sad',
-			text: 'wow'
+			card: {
+				theme: '',
+				art: '',
+				name: '',
+				sender: 'A friend'
+			},
+			address: {
+				name: '',
+				line1: '',
+				line2: '',
+				state: '',
+				city: '',
+				zip: '',
+				country: ''
+			}
 		}
 	};
 }
