@@ -10,6 +10,9 @@ var mongoose = require('mongoose'),
  * Subscription Schema
  */
 var ProductSchema = new Schema({
+	user: {
+		type: Object
+	},
 	card: {
 		name: {
 			type: String,

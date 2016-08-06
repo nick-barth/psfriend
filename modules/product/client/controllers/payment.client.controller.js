@@ -12,6 +12,7 @@ function PaymentController ($scope, $state, $http, ProductService) {
 
 	$scope.backLink = '/onboard/address';
 
+	$scope.ProductService.user = user;
 	$scope.submit = function () {
 		$http.post('/api/product/add', $scope.ProductService)
 			.success(function (response) {
