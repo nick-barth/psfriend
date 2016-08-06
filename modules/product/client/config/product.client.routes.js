@@ -18,11 +18,6 @@
 			templateUrl: 'modules/product/client/views/address.client.view.html',
 			controller: 'AddressController',
 		})
-		.state('signup', {
-			url: '/onboard/address',
-			templateUrl: 'modules/product/client/views/address.client.view.html',
-			controller: 'AddressController',
-		})
 		.state('payment', {
 			url: '/onboard/payment',
 			templateUrl: 'modules/product/client/views/payment.client.view.html',

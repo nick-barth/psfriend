@@ -10,11 +10,7 @@ AddressController.$inject = ['$scope', '$state', '$http', 'ProductService'];
 function AddressController ($scope, $state, $http, ProductService) {
 	$scope.address = ProductService.product.address;
 
-	if (user) {
-		$scope.nextLink = '/onboard/payment';
-	} else {
-		$scope.nextLink = '/onboard/signup';
-	};
+	$scope.nextLink = '/onboard/payment';
 
 	$scope.backLink = '/onboard/card';
 
