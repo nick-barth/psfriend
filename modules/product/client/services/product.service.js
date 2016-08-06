@@ -8,6 +8,7 @@ angular
 function ProductService () {
 	return {
 		product: {
+			user: false,
 			card: {
 				theme: '',
 				art: '',
