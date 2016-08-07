@@ -6,7 +6,7 @@
 var path = require('path'),
 	bodyParser = require('body-parser'),
 	mongoose = require('mongoose'),
-  stripe = require('stripe')('sk_test_1F8og0u1ScLV2rfMHyE5XbOV');
+  stripe = require('stripe')('sk_test_1F8og0u1ScLV2rfMHyE5XbOV'),
 	Product = mongoose.model('Product');
 
 /**

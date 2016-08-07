@@ -55,7 +55,11 @@
 
 	<!--Load The Socket.io File-->
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 
+	<script type="text/javascript">
+  	Stripe.setPublishableKey('pk_test_uUCOYxaC03JHvV63SQlcfhop');
+	</script>
 	<!--Application JavaScript Files-->
 	{% for jsFile in jsFiles %}
 	<script type="text/javascript" src="{{jsFile}}"></script>

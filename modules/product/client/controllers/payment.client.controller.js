@@ -11,14 +11,22 @@ function PaymentController ($scope, $state, $http, ProductService) {
 	$scope.ProductService = ProductService.product;
 
 	$scope.backLink = '/onboard/address';
-
 	$scope.ProductService.user = user;
+
 	$scope.submit = function () {
-		$http.post('/api/product/add', $scope.ProductService)
-			.success(function (response) {
-				console.log('subscription added');
-			});
+		Stripe.card.createToken(paymentForm, $scope.stripeResponseHandler);
 	};
 
+	$scope.stripeResponseHandler = function (status, response) {
+		if (response.error) { // Problem!
+			console.log(response.error);
+		} else {
+			$scope.ProductService.token = response.id;
+			$http.post('/api/product/add', $scope.ProductService)
+				.success(function (response) {
+					console.log('subscription added');
+				});
+		};
+	};
 }
 }());
