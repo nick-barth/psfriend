@@ -13,29 +13,6 @@ var ProductSchema = new Schema({
 	user: {
 		type: Object
 	},
-	card: {
-		name: {
-			type: String,
-		},
-		line1: {
-			type: String,
-		},
-		line2: {
-			type: String
-		},
-		city: {
-			type: String,
-		},
-		state: {
-			type: String,
-		},
-		zip: {
-			type: Number,
-		},
-		country: {
-			type: String,
-		}
-	},
 	address: {
 		name: {
 			type: String,

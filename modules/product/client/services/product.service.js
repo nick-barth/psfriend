@@ -23,7 +23,7 @@ function ProductService () {
 				city: '',
 				zip: '',
 				country: ''
-			}
+			},
 		}
 	};
 }
