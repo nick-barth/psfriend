@@ -6,7 +6,7 @@
 var path = require('path'),
 	bodyParser = require('body-parser'),
 	mongoose = require('mongoose'),
-	stripe = require('stripe')('sk_test_1F8og0u1ScLV2rfMHyE5XbOV'),
+	stripe = require('stripe')('sk_test_tPfzyUAM233jL497ICuteBSn'),
 	Product = mongoose.model('Product');
 
 /**
@@ -15,11 +15,10 @@ var path = require('path'),
 exports.add = function (req, res) {
 	let token = req.body.token;
 	let product = new Product(req.body);
-	console.log(product);
 	stripe.customers.create({
 		source: token,
 		plan: 'basic_test',
-		email: 'jimbo'
+		email: 'ethan'
 	}, function (err, customer) {
 			console.log(err);
 		});
