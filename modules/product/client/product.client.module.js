@@ -4,4 +4,5 @@
 app.registerModule('product');
 app.registerModule('product.routes', ['ui.router', 'core.routes']);
 app.registerModule('product.services');
+app.registerModule('users.services');
 }(ApplicationConfiguration));
