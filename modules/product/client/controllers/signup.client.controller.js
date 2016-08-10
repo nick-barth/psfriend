@@ -8,7 +8,6 @@ angular
 SignupController.$inject = ['$scope', '$state', '$http', 'ProductService', 'Authentication'];
 
 function SignupController ($scope, $state, $http, ProductService, Authentication) {
-	console.log(Authentication);
 	$scope.create = function () {
 		$scope.create = function () {
 			let credentials = {

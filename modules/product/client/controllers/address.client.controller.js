@@ -12,6 +12,12 @@ function AddressController ($scope, $state, $http, ProductService) {
 
 	$scope.save = function () {
 		ProductService.product.address = $scope.address;
+		console.log(user);
+		if (user) {
+			$state.go('payment');
+		} else {
+			$state.go('signup');
+		}
 	};
 }
 }());

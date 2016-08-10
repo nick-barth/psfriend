@@ -10,7 +10,6 @@ PaymentController.$inject = ['$scope', '$state', '$http', 'ProductService'];
 function PaymentController ($scope, $state, $http, ProductService) {
 	$scope.ProductService = ProductService.product;
 
-	$scope.backLink = '/onboard/address';
 	$scope.ProductService.user = user;
 
 	$scope.submit = function () {

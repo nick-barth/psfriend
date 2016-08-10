@@ -10,10 +10,9 @@ CardController.$inject = ['$scope', '$state', '$http', 'ProductService'];
 function CardController ($scope, $state, $http, ProductService) {
 	$scope.card = ProductService.product.card;
 
-	$scope.nextLink = 'onboard/address';
-
 	$scope.save = function () {
 		ProductService.product.card = $scope.card;
+		$state.go('address');
 	};
 }
 }());
