@@ -10,19 +10,21 @@ function ProductService () {
 		product: {
 			user: false,
 			card: {
-				theme: '',
-				art: '',
-				name: '',
-				sender: 'A friend'
+				theme: null,
+				art: null,
+				name: null,
+				sender: 'A friend',
+				gift: null,
+				why: null
 			},
 			address: {
-				name: '',
-				line1: '',
-				line2: '',
-				state: '',
-				city: '',
-				zip: '',
-				country: ''
+				name: null,
+				line1: null,
+				line2: null,
+				state: null,
+				city: null,
+				zip: null,
+				country: null
 			},
 		}
 	};

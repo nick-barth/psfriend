@@ -1,21 +1,61 @@
 <div class="container">
-	<form>
-		<div class="row">
-			<div class="col-sm-6">
-				<input ng-model="card.name" type="text" class="form-control" placeholder="">
+	<div class="material">
+		<form>
+			<div class="card__who-text">
+				Who is going to be recieving this card?
 			</div>
-			<div class="col-sm-6">
-				<input ng-model="card.theme" type="text" class="form-control" placeholder="Text input">
+			<div class="row card__who-options">
+				<div ng-click="who(1)" class="col-sm-6 card__who-option">
+					This is for me!
+				</div>
+				<div ng-click="who(0)" class="col-sm-6 card__who-option">
+					This is a gift!
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-6">
-				<input ng-model="card.sender" type="text" class="form-control" placeholder="Text input">
+			<div ng-show="card.gift != null">
+				<div class="card__why-text">
+					Great! Now tell us a little more about why you want to send a nice hand written card.
+				</div>
+				<div class="card__why-options">
+					<div class="row">
+						<div ng-click="why(1)" class="col-sm-6 card__why-option">
+							<div class="card__why-option-container">
+								<div class="card__why-option-text">
+									Looking for some motivation? Aren't we all? You can do it!
+								</div>
+								<img class="card__why-icon" ng-src="/modules/product/client/img/icon-smile.svg">
+							</div>
+						</div>
+						<div ng-click="why(1)" class="col-sm-6 card__why-option">
+							<div class="card__why-option-container">
+								<div class="card__why-option-text">
+									Looking for some motivation? Aren't we all? You can do it!
+								</div>
+								<img class="card__why-icon" ng-src="/modules/product/client/img/icon-smile.svg">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div ng-click="why(1)" class="col-sm-6 card__why-option">
+							<div class="card__why-option-container">
+								<div class="card__why-option-text">
+									Looking for some motivation? Aren't we all? You can do it!
+								</div>
+								<img class="card__why-icon" ng-src="/modules/product/client/img/icon-smile.svg">
+							</div>
+						</div>
+						<div ng-click="why(1)" class="col-sm-6 card__why-option">
+							<div class="card__why-option-container">
+								<div class="card__why-option-text">
+									Looking for some motivation? Aren't we all? You can do it!
+								</div>
+								<img class="card__why-icon" ng-src="/modules/product/client/img/icon-smile.svg">
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="col-sm-6">
-				<input ng-model="card.art" type="text" class="form-control" placeholder="Text input">
-			</div>
-		</div>
-		<a ng-click="save()">Next </a>
+	</div>
 	</form>
+</div>
 </div>

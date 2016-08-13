@@ -2,13 +2,19 @@
 
 html {
  font-family: 'Roboto', sans-serif;
- background: url(../img/background/symphony.png);
  font-size:10px;
 }
 
 body {
 	padding:0;
 	margin:0;
+	background: url(../img/background/symphony.png);
+	color:$grey-text;
+}
+
+.row {
+	margin-left:0px;
+	margin-right:0px;
 }
 
 

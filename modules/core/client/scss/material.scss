@@ -1,0 +1,61 @@
+@import "../../../utilities/global.scss";
+
+.material {
+	border-radius:2px;
+	background: $white;
+    @include box-shadow(1);
+	max-width:90rem;
+	margin:auto;
+}
+
+.material__input-container {
+	
+}
+
+.material__input {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 2em;
+  border: none;
+  background-color:$white;
+  color:$grey-text;
+  border-bottom: 1px solid $grey;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+  transition: 0.2s ease;
+}
+
+.material__input:hover,
+.material__input:focus {
+  border-bottom: 2px solid $peach;
+  transition: 0.2s ease;
+}
+
+.material__submit {
+  margin-top: 28px;
+  width: 120px;
+  height: 32px;
+  background: $peach;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+.material__submit:hover,
+.material__submit:focus {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+.material__submit:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}

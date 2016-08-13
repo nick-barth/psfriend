@@ -1,0 +1,46 @@
+/*
+* WHO
+*/
+.card__who-text {
+  text-align: center;
+  padding-bottom: 3em;
+  padding-top: 1em; }
+
+.card__who-options {
+  padding-bottom: 3em; }
+
+.card__who-option {
+  cursor: pointer;
+  text-align: center;
+  padding-top: 3em;
+  padding-bottom: 3em; }
+
+.card__who-option:hover {
+  background-color: #fff8eb; }
+
+.card__who-option:nth-child(1) {
+  border-right: 1px solid #E9E9E9; }
+
+/*
+* Why
+*/
+.card__why-option {
+  text-align: center;
+  padding: 2em; }
+
+.card__why-option-container {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background-color: #9BD7D5;
+  color: #FFFAF0;
+  padding: 2em;
+  cursor: pointer; }
+
+.card__why-option-container:hover {
+  background-color: #89d0cd; }
+
+.card__why-text {
+  text-align: center;
+  padding-top: 1em; }
+
+.card__why-icon {
+  height: 12em; }

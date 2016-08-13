@@ -1,0 +1,59 @@
+@import "../../../utilities/global.scss";
+
+/*
+* WHO
+*/
+
+.card__who-text {
+	text-align:center;
+	padding-bottom: 3em;
+	padding-top:1em;
+}
+
+.card__who-options {
+	padding-bottom:3em;
+}
+
+.card__who-option {
+	cursor:pointer;
+	text-align: center;
+	padding-top: 3em;
+	padding-bottom: 3em;
+}
+
+.card__who-option:hover {
+	background-color: darken($white, 1%);
+}
+
+.card__who-option:nth-child(1){
+	border-right: 1px solid $light-grey;
+}
+
+/*
+* Why
+*/
+.card__why-option {
+	text-align:center;
+	padding:2em;
+}
+
+.card__why-option-container {
+	@include box-shadow(2);
+	background-color:$blue;
+	color:$white;
+	padding:2em;
+	cursor:pointer;
+}
+
+.card__why-option-container:hover {
+	background-color: darken($blue, 5%);
+}
+
+.card__why-text {
+	text-align:center;
+	padding-top:1em;
+}
+
+.card__why-icon {
+	height:12em;
+}
