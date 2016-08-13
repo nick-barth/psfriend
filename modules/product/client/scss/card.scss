@@ -32,9 +32,15 @@
 /*
 * Why
 */
+.card__why-options {
+	padding-bottom:2em;
+}
+
 .card__why-option {
 	text-align:center;
-	padding:2em;
+	padding-top:2em;
+	padding-right: 4em;
+	padding-left:4em;
 }
 
 .card__why-option-container {
@@ -44,6 +50,14 @@
 	padding:2em;
 	cursor:pointer;
 }
+
+.card__why-option:nth-child(odd) {
+	padding-right:.8em;
+}
+.card__why-option:nth-child(even) {
+	padding-left:.8em;
+}
+
 
 .card__why-option-container:hover {
 	background-color: darken($blue, 5%);
