@@ -6,6 +6,7 @@
 var _ = require('lodash'),
 	fs = require('fs'),
 	defaultAssets = require('./config/assets/default'),
+	testAssets = require('./config/assets/test'),
 	glob = require('glob'),
 	gulp = require('gulp'),
 	gulpLoadPlugins = require('gulp-load-plugins'),
@@ -42,7 +43,6 @@ gulp.task('nodemon', function () {
 		script: 'server.js',
 		nodeArgs: ['--debug'],
 		ext: 'js,html',
-		verbose:true,
 		watch: _.union(defaultAssets.server.views, defaultAssets.server.allJS, defaultAssets.server.config)
 	});
 });
