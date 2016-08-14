@@ -117,6 +117,26 @@
 }
 
 /*
+*	Card Art
+*/
+.card__art-option {
+	text-align:center;
+	cursor:pointer;
+}
+
+.card__art-icon {
+	max-height:7em;
+}
+
+.card__art-option-selected {
+	@include box-shadow(0);
+	background-color:$blue;
+	color:$white;
+	padding: 0;
+	text-align:center;
+}
+
+/*
 *	Card Details
 */
 .card__note {

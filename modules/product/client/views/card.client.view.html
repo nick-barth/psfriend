@@ -1,15 +1,49 @@
 <div class="container">
 	<form>
-		<div class="material">
-			<div ng-show="card.gift == null" class="card__who-text">
-				Who is going to be recieving this card?
+		<div ng-show="(card.gift == null)" class="material">
+			<div class="card__details-title">
+				Who will be recieving this card?
 			</div>
-			<div ng-class="card.gift == null ? 'row card__who-options' : 'row card__who-options-selected'">
-				<div ng-click="who(0)" ng-class="card.gift != 0 ? 'col-sm-6 card__who-option' : 'col-sm-6 card__who-option-selected'">
-					This is for me!
+			<div class="card__why-options">
+				<div class="row">
+					<div ng-click="gift(1)" class="col-sm-6 card__why-option">
+						<div class="card__why-option-container">
+							<div class="card__why-option-title">
+								This card is for myself
+							</div>
+							<div ng-show="card.theme == null" class="card__why-option-text">
+								Because you deserve some internet stranger love!
+							</div>
+							<img class="card__why-icon" ng-src="/modules/product/client/img/icon-smile.svg">
+						</div>
+					</div>
+					<div ng-click="gift(2)" class="col-sm-6 card__why-option">
+						<div class="card__why-option-container">
+							<div class="card__why-option-title">
+								This card is a gift
+							</div>
+							<div class="card__why-option-text">
+								Who doesn't like gifts?
+							</div>
+							<img class="card__why-icon" ng-src="/modules/product/client/img/icon-smile.svg">
+						</div>
+					</div>
 				</div>
-				<div ng-click="who(1)" ng-class="card.gift != 1 ? 'col-sm-6 card__who-option' : 'col-sm-6 card__who-option-selected'">
-					This is a gift!
+			</div>
+		</div>
+		<div ng-show="(card.gift != null)" class="material">
+			<div class="row card__why-sm">
+				<div ng-click="gift(1)" ng-class="card.gift == 1 ? 'card__why-option-container--sm col-sm-6 is-active' : 'card__why-option-container--sm col-sm-6'">
+					<div class="card__why-option-title--sm">
+						This card is for myself
+					</div>
+					<img class="card__why-icon--sm" ng-src="/modules/product/client/img/icon-smile.svg">
+				</div>
+				<div ng-click="gift(2)" ng-class="card.gift == 2 ? 'card__why-option-container--sm col-sm-6 is-active' : 'card__why-option-container--sm col-sm-6'">
+					<div class="card__why-option-title--sm">
+						This card is a gift
+					</div>
+					<img class="card__why-icon--sm" ng-src="/modules/product/client/img/icon-smile.svg">
 				</div>
 			</div>
 		</div>
@@ -44,21 +78,10 @@
 						</div>
 					</div>
 					<div class="row">
-						<div ng-click="why(3)" class="col-sm-6 card__why-option">
+						<div ng-click="why(3)" class="col-sm-6 col-sm-offset-3 card__why-option">
 							<div class="card__why-option-container">
 								<div class="card__why-option-title">
 									Inspiration
-								</div>
-								<div ng-show="card.theme == null" class="card__why-option-text">
-									Looking for some motivation? Aren't we all? You can do it!
-								</div>
-								<img class="card__why-icon" ng-src="/modules/product/client/img/icon-smile.svg">
-							</div>
-						</div>
-						<div ng-click="why(4)" class="col-sm-6 card__why-option">
-							<div class="card__why-option-container">
-								<div class="card__why-option-title">
-									Kindness
 								</div>
 								<div ng-show="card.theme == null" class="card__why-option-text">
 									Looking for some motivation? Aren't we all? You can do it!
@@ -72,35 +95,77 @@
 		</div>
 		<div ng-show="(card.gift != null) && (card.theme != null)" class="material">
 			<div class="row card__why-sm">
-				<div ng-click="why(1)" ng-class="card.theme == 1 ? 'card__why-option-container--sm col-sm-3 is-active' : 'card__why-option-container--sm col-sm-3'">
+				<div ng-click="why(1)" ng-class="card.theme == 1 ? 'card__why-option-container--sm col-sm-4 is-active' : 'card__why-option-container--sm col-sm-4'">
 					<div class="card__why-option-title--sm">
 						Motivation
 					</div>
 					<img class="card__why-icon--sm" ng-src="/modules/product/client/img/icon-smile.svg">
 				</div>
-				<div ng-click="why(2)" ng-class="card.theme == 2 ? 'card__why-option-container--sm col-sm-3 is-active' : 'card__why-option-container--sm col-sm-3'">
+				<div ng-click="why(2)" ng-class="card.theme == 2 ? 'card__why-option-container--sm col-sm-4 is-active' : 'card__why-option-container--sm col-sm-4'">
 					<div class="card__why-option-title--sm">
 						Fun
 					</div>
 					<img class="card__why-icon--sm" ng-src="/modules/product/client/img/icon-smile.svg">
 				</div>
-				<div ng-click="why(3)" ng-class="card.theme == 3 ? 'card__why-option-container--sm col-sm-3 is-active' : 'card__why-option-container--sm col-sm-3'">
+				<div ng-click="why(3)" ng-class="card.theme == 3 ? 'card__why-option-container--sm col-sm-4 is-active' : 'card__why-option-container--sm col-sm-4'">
 					<div class="card__why-option-title--sm">
 						Inspiration
 					</div>
 					<img class="card__why-icon--sm" ng-src="/modules/product/client/img/icon-smile.svg">
 				</div>
-				<div ng-click="why(4)" ng-class="card.theme == 4 ? 'card__why-option-container--sm col-sm-3 is-active' : 'card__why-option-container--sm col-sm-3'">
-					<div class="card__why-option-title--sm">
-						Kindness
+			</div>
+		</div>
+		<div ng-show="(card.gift != null) && (card.theme != null) && (card.art == null)" class="material">
+			<div ng-show="card.art == null" class="card__details-title">
+				Art
+			</div>
+			<div class="card__why-text">
+				Your card will come with new artwork every month. What type of art do you perfer?
+			</div>
+			<div class="card__why-options">
+				<div class="row">
+					<div ng-click="art(1)" class="col-sm-6 card__why-option">
+						<div class="card__why-option-container">
+							<div class="card__why-option-title">
+								Photography
+							</div>
+							<div class="card__why-option-text">
+								For the inner Ansel Adams
+							</div>
+							<img class="card__why-icon" ng-src="/modules/product/client/img/icon-smile.svg">
+						</div>
 					</div>
-					<div class="card__why-icon-container">
-						<img class="card__why-icon--sm" ng-src="/modules/product/client/img/icon-smile.svg">
+					<div ng-click="art(2)" class="col-sm-6 card__why-option">
+						<div class="card__why-option-container">
+							<div class="card__why-option-title">
+								Art and Graphic Design
+							</div>
+							<div class="card__why-option-text">
+								For the more abstract.
+							</div>
+							<img class="card__why-icon" ng-src="/modules/product/client/img/icon-smile.svg">
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div ng-show="(card.gift != null) && (card.theme != null)" class="material">
+		<div ng-show="(card.gift != null) && (card.theme != null) && (card.art != null)" class="material">
+			<div class="row card__why-sm">
+				<div ng-click="art(1)" ng-class="card.art == 1 ? 'card__why-option-container--sm col-sm-6 is-active' : 'card__why-option-container--sm col-sm-6'">
+					<div class="card__why-option-title--sm">
+						Photography
+					</div>
+					<img class="card__why-icon--sm" ng-src="/modules/product/client/img/icon-smile.svg">
+				</div>
+				<div ng-click="art(2)" ng-class="card.art == 2 ? 'card__why-option-container--sm col-sm-6 is-active' : 'card__why-option-container--sm col-sm-6'">
+					<div class="card__why-option-title--sm">
+						Art and Graphic Design
+					</div>
+					<img class="card__why-icon--sm" ng-src="/modules/product/client/img/icon-smile.svg">
+				</div>
+			</div>
+		</div>
+		<div ng-show="(card.gift != null) && (card.theme != null) && (card.art != null)" class="material">
 			<div class="col-sm-8 col-sm-offset-2">
 				<div class="card__details-title">
 					Card Details
@@ -110,7 +175,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div ng-show="card.gift == 1" class="row">
+				<div ng-show="card.gift == 2" class="row">
 					<div class="col-sm-6">
 						<div class="card__details-input-label">
 							Dear,
@@ -125,7 +190,7 @@
 					</div>
 				</div>
 			</div>
-			<div ng-show="(card.gift == 1) && (card.theme != null) && (card.sender != null && card.recipient != null)">
+			<div ng-show="(card.theme != null) && (card.art != null) && ((card.sender != null && card.recipient != null) || card.gift == 0)">
 				<div class="row">
 					<div class="col-sm-8 col-sm-offset-2">
 						<div class="card__details-title">
@@ -143,7 +208,7 @@
 				</div>
 			</div>
 		</div>
-		<div ng-show="(card.gift != null) && (card.theme != null) && ((card.gift == 1 && card.sender != null && card.recipient != null) || (card.gift == 0))" class="row">
+		<div ng-show="(card.theme != null) && (card.art != null) && ((card.sender != null && card.recipient != null) || card.gift == 0)" class="row material--width">
 			<div class="col-sm-6">
 			</div>
 			<div ng-click="next()" class="col-sm-6 material material--submit">

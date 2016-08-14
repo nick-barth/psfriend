@@ -84,6 +84,22 @@
   max-height: 5em; }
 
 /*
+*	Card Art
+*/
+.card__art-option {
+  text-align: center;
+  cursor: pointer; }
+
+.card__art-icon {
+  max-height: 7em; }
+
+.card__art-option-selected {
+  background-color: #9BD7D5;
+  color: #FFFAF0;
+  padding: 0;
+  text-align: center; }
+
+/*
 *	Card Details
 */
 .card__note {
