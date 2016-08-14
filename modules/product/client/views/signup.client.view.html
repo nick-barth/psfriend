@@ -1,13 +1,56 @@
 <div class="container">
-  <form>
-    <div class="row">
-      <form>
-        <input ng-model="email" type="text" placeholder="Email Address">
-        <input ng-model="password" type="password">
-        <input ng-model="password2" type="password">
-      </form>
-    </div>
-    <div ui-sref="address"> Back </div>
-    <div ng-click="create()">Next </a>
-  </form>
-  </div>
+	<div class="material">
+		<form name="signupForm">
+			<div class="form__title">
+				Account
+			</div>
+			<div class="form__description">
+				An account is required to manage your subscriptions.  We will not use your information for evil!  Your privacy will be respected.
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="material__input-label">
+						Email:
+					</div>
+					<input name="email" ng-required="true" ng-model="email" type="text" class="material__input">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="material__input-label">
+						Password:
+					</div>
+					<input name="password1" ng-required="true" ng-model="password1" type="password" class="material__input">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="material__input-label">
+						Verify password:
+					</div>
+					<input name="password2" ng-required="true" ng-model="password2" type="password" class="material__input"  password-verify="password1">
+				</div>
+			</div>
+		</form>
+		<div class="material__input-error" ng-show="signupForm.$error.passwordVerify">
+			Passwords must match.
+		</div>
+		<div class="material__input-error" ng-show="error">
+			Email is already in use.
+		</div>
+	</div>
+	<div class="row material--width">
+		<div ng-click="back()" class="col-sm-4 material material--submit">
+			<div class="material__submit">
+				Back
+			</div>
+		</div>
+		<div class="col-sm-4">
+		</div>
+		<div ng-show="signupForm.$valid" ng-click="next()" class="col-sm-4 material material--submit">
+			<div class="material__submit">
+				Next
+			</div>
+		</div>
+	</div>
+</div>

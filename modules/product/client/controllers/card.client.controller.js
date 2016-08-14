@@ -19,7 +19,6 @@ function CardController ($scope, $state, $http, ProductService) {
 	};
 
 	$scope.art = function (choice) {
-		console.log(choice);
 		$scope.card.art = choice;
 	};
 

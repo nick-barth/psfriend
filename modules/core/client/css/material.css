@@ -30,7 +30,7 @@
 
 .material__input:focus,
 .material__input:hover {
-  border-bottom: 2px solid #ef9e9f;
+  border-bottom: 1px solid #ef9e9f;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease; }
 

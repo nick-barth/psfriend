@@ -19,10 +19,7 @@ function AddressController ($scope, $state, $http, ProductService) {
 		}
 	};
 	$scope.back = function () {
-		if (false) {
-			ProductService.product.address = $scope.address;
-			$state.go('card');
-		}
+		$state.go('card');
 	};
 }
 }());
