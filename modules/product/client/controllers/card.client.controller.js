@@ -18,6 +18,10 @@ function CardController ($scope, $state, $http, ProductService) {
 		}
 	};
 
+	$scope.why = function (choice) {
+		$scope.card.theme = choice;
+	};
+
 	$scope.save = function () {
 		ProductService.product.card = $scope.card;
 		$state.go('address');

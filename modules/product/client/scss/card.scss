@@ -21,6 +21,21 @@
 	padding-bottom: 3em;
 }
 
+.card__who-options-selected {
+	@include box-shadow(2);
+}
+
+.card__who-options-selected .card__who-option {
+	padding: 1em;
+}
+
+.card__who-options-selected .card__who-option-selected {
+	padding: 1em;
+	background-color:$blue;
+	color:$white;
+	text-align: center;
+}
+
 .card__who-option:hover {
 	background-color: darken($white, 1%);
 }
@@ -39,8 +54,6 @@
 .card__why-option {
 	text-align:center;
 	padding-top:2em;
-	padding-right: 4em;
-	padding-left:4em;
 }
 
 .card__why-option-container {
@@ -51,16 +64,24 @@
 	cursor:pointer;
 }
 
-.card__why-option:nth-child(odd) {
-	padding-right:.8em;
+.card__why-option-selected {
+	@include box-shadow(0);
+	background-color:$blue;
+	color:$white;
+	padding: 0;
 }
-.card__why-option:nth-child(even) {
-	padding-left:.8em;
+
+.card__why-icon {
+	height:12em;
 }
 
 
 .card__why-option-container:hover {
 	background-color: darken($blue, 5%);
+}
+
+.card__why-option-title {
+
 }
 
 .card__why-text {
@@ -69,5 +90,28 @@
 }
 
 .card__why-icon {
-	height:12em;
+}
+
+// sm
+
+.card__why-sm {
+	@include box-shadow(2);
+}
+
+.card__why-option-container--sm {
+	cursor: pointer;
+	text-align:center;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top:1em;
+	padding-bottom:1em;
+}
+
+.card__why-option-container--sm.is-active {
+	background-color:$blue;
+	color:$white;
+}
+
+.card__why-icon--sm {
+	max-height:5em;
 }

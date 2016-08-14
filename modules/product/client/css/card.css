@@ -15,6 +15,18 @@
   padding-top: 3em;
   padding-bottom: 3em; }
 
+.card__who-options-selected {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+
+.card__who-options-selected .card__who-option {
+  padding: 1em; }
+
+.card__who-options-selected .card__who-option-selected {
+  padding: 1em;
+  background-color: #9BD7D5;
+  color: #FFFAF0;
+  text-align: center; }
+
 .card__who-option:hover {
   background-color: #fff8eb; }
 
@@ -29,9 +41,7 @@
 
 .card__why-option {
   text-align: center;
-  padding-top: 2em;
-  padding-right: 4em;
-  padding-left: 4em; }
+  padding-top: 2em; }
 
 .card__why-option-container {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -40,11 +50,13 @@
   padding: 2em;
   cursor: pointer; }
 
-.card__why-option:nth-child(odd) {
-  padding-right: .8em; }
+.card__why-option-selected {
+  background-color: #9BD7D5;
+  color: #FFFAF0;
+  padding: 0; }
 
-.card__why-option:nth-child(even) {
-  padding-left: .8em; }
+.card__why-icon {
+  height: 12em; }
 
 .card__why-option-container:hover {
   background-color: #89d0cd; }
@@ -53,5 +65,20 @@
   text-align: center;
   padding-top: 1em; }
 
-.card__why-icon {
-  height: 12em; }
+.card__why-sm {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+
+.card__why-option-container--sm {
+  cursor: pointer;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 1em;
+  padding-bottom: 1em; }
+
+.card__why-option-container--sm.is-active {
+  background-color: #9BD7D5;
+  color: #FFFAF0; }
+
+.card__why-icon--sm {
+  max-height: 5em; }
