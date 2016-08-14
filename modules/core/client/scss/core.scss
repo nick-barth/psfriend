@@ -28,6 +28,19 @@ a:hover {
 	color:$blue;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:required {
+    box-shadow:none;
+}
+input:invalid {
+    box-shadow:none;
+}
+
 [ng\:cloak],
 [ng-cloak],
 [x-ng-cloak],

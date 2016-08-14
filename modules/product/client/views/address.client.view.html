@@ -1,30 +1,68 @@
 <div class="container">
-	<form>
-		<div class="row">
-			<div class="col-sm-6">
-				<input ng-model="address.name" type="text" class="form-control" placeholder="">
+	<div class="material">
+		<form name="addressForm">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="material__input-label">
+						Full Name:
+					</div>
+					<input name="name" ng-required="true" ng-model="address.name" type="text" class="material__input">
+				</div>
 			</div>
-			<div class="col-sm-6">
-				<input ng-model="address.line1" type="text" class="form-control" placeholder="Text input">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="material__input-label">
+						Address Line 1:
+					</div>
+					<input name="address" ng-required="true" ng-model="address.line1" type="text" class="material__input">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="material__input-label">
+						Address Line 2:
+					</div>
+					<input ng-model="address.line2" type="text" class="material__input">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="material__input-label">
+						City:
+					</div>
+					<input name="city" ng-required="true" ng-model="address.city" type="text" class="material__input">
+				</div>
+				<div class="col-sm-1">
+					<div class="material__input-label">
+						State:
+					</div>
+					<input ng-required="true" maxlength="2" ng-model="address.state" type="text" class="material__input">
+				</div>
+				<div class="col-sm-2">
+					<div class="material__input-label">
+						Zip:
+					</div>
+					<input name="zip" ng-required="true" maxlength="6" ng-model="address.zip" type="number" class="material__input" ng-pattern="/^\d+$/">
+				</div>
+			</div>
+			<div class="material__input-error" ng-show="addressForm.zip.$dirty && addressForm.zip.$invalid">
+				Zip code must be a number
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-sm-6">
-				<input ng-model="address.line2" type="text" class="form-control" placeholder="Text input">
-			</div>
-			<div class="col-sm-6">
-				<input ng-model="address.state" type="text" class="form-control" placeholder="Text input">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-6">
-				<input ng-model="address.city" type="text" class="form-control" placeholder="Text input">
-			</div>
-			<div class="col-sm-6">
-				<input ng-model="address.zip" type="text" class="form-control" placeholder="Text input">
-			</div>
-		</div>
-		<a ng-click="save()">Next </a>
-		<a ui-sref="card">Back </a>
 	</form>
+	<div class="row material--width">
+		<div ng-click="back()" class="col-sm-4 material material--submit">
+			<div class="material__submit">
+				Back
+			</div>
+		</div>
+		<div class="col-sm-4">
+		</div>
+		<div ng-show="addressForm.$valid" ng-click="next()" class="col-sm-4 material material--submit">
+			<div class="material__submit">
+				Next
+			</div>
+		</div>
+	</div>
+</div>
 </div>

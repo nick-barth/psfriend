@@ -23,6 +23,7 @@
 	font-weight: 400;
 	font-size: 1.5em;
 	transition: 0.2s ease;
+	width:100%;
 }
 .material__input.material__input--text-area {
 	width: 100%;
@@ -33,6 +34,20 @@
 	border-bottom: 2px solid $peach;
 	transition: 0.2s ease;
 }
+.material__input-label {
+	padding-top:1em;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
 .material__input--text-area {
 	display: block;
 	box-sizing: border-box;
@@ -46,6 +61,13 @@
 	font-size: 1.5em;
 	transition: 0.2s ease;
 }
+
+.material__input-error {
+	height: 3em;
+	text-align: center;
+	color: $error;
+}
+
 .material__submit {
 	background: $peach;
 	border: none;
