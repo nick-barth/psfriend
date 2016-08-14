@@ -6,7 +6,7 @@
 			</div>
 			<div class="card__why-options">
 				<div class="row">
-					<div ng-click="gift(1)" class="col-sm-6 card__why-option">
+					<div ng-click="gift(0)" class="col-sm-6 card__why-option">
 						<div class="card__why-option-container">
 							<div class="card__why-option-title">
 								This card is for myself
@@ -17,7 +17,7 @@
 							<img class="card__why-icon" ng-src="/modules/product/client/img/icon-smile.svg">
 						</div>
 					</div>
-					<div ng-click="gift(2)" class="col-sm-6 card__why-option">
+					<div ng-click="gift(1)" class="col-sm-6 card__why-option">
 						<div class="card__why-option-container">
 							<div class="card__why-option-title">
 								This card is a gift
@@ -33,13 +33,13 @@
 		</div>
 		<div ng-show="(card.gift != null)" class="material">
 			<div class="row card__why-sm">
-				<div ng-click="gift(1)" ng-class="card.gift == 1 ? 'card__why-option-container--sm col-sm-6 is-active' : 'card__why-option-container--sm col-sm-6'">
+				<div ng-click="gift(0)" ng-class="card.gift == 0 ? 'card__why-option-container--sm col-sm-6 is-active' : 'card__why-option-container--sm col-sm-6'">
 					<div class="card__why-option-title--sm">
 						This card is for myself
 					</div>
 					<img class="card__why-icon--sm" ng-src="/modules/product/client/img/icon-smile.svg">
 				</div>
-				<div ng-click="gift(2)" ng-class="card.gift == 2 ? 'card__why-option-container--sm col-sm-6 is-active' : 'card__why-option-container--sm col-sm-6'">
+				<div ng-click="gift(1)" ng-class="card.gift == 1 ? 'card__why-option-container--sm col-sm-6 is-active' : 'card__why-option-container--sm col-sm-6'">
 					<div class="card__why-option-title--sm">
 						This card is a gift
 					</div>
@@ -164,7 +164,7 @@
 			</div>
 		</div>
 		<div ng-show="(card.gift != null) && (card.theme != null) && (card.art != null)" class="material  animate">
-			<div class="col-sm-8 col-sm-offset-2">
+			<div ng-show="card.gift != 0" class="col-sm-8 col-sm-offset-2">
 				<div class="card__details-title">
 					Card Details
 				</div>
@@ -173,7 +173,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div ng-show="card.gift == 2" class="row">
+				<div ng-show="card.gift == 1" class="row">
 					<div class="col-sm-6">
 						<div class="card__details-input-label">
 							Dear,
