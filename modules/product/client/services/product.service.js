@@ -13,9 +13,11 @@ function ProductService () {
 				theme: null,
 				art: null,
 				name: null,
-				sender: 'A friend',
+				sender: null,
 				gift: null,
-				why: null
+				why: null,
+				note: null
+
 			},
 			address: {
 				name: null,

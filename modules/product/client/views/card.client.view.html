@@ -101,23 +101,56 @@
 			</div>
 		</div>
 		<div ng-show="(card.gift != null) && (card.theme != null)" class="material">
-			<div class="row">
-				<div ng-show="card.gift == 0" class="row">
-					<div class="col-sm-6">
-						Sender
-						<input ng-model="card.sender" type="text" class="material__input" placeholder="Text input">
-					</div>
-					<div class="col-sm-6">
-						Recipient
-						<input ng-model="card.recipient" type="text" class="material__input" placeholder="Text input">
-					</div>
+			<div class="col-sm-8 col-sm-offset-2">
+				<div class="card__details-title">
+					Card Details
+				</div>
+				<div class="card__details-desc">
+					What is written here will be exactly how it appears on the cards, please be care, and avoid typos. We wouldn't want Aunt Dusan to get a card instead of Aunt Susan.
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-12">
-					Why? Tell us a little more about why you are sending this card. We won't judge!
+				<div ng-show="card.gift == 1" class="row">
+					<div class="col-sm-6">
+						<div class="card__details-input-label">
+							Dear,
+						</div>
+						<input ng-model="card.recipient" type="text" class="material__input card__details-input">
+					</div>
+					<div class="col-sm-6">
+						<div class="card__details-input-label">
+							From,
+						</div>
+						<input ng-model="card.sender" type="text" class="material__input card__details-input">
+					</div>
+				</div>
+			</div>
+			<div ng-show="(card.gift == 1) && (card.theme != null) && (card.sender != null && card.recipient != null)">
+				<div class="row">
+					<div class="col-sm-8 col-sm-offset-2">
+						<div class="card__details-title">
+							Tell us why (optional)
+						</div>
+						<div class="card__details-desc">
+							To help us personalise your card, tell us a little about why you are sending a handwritten letter! Feel free to anything you want here, we won't judge.
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="card__notes col-sm-8 col-sm-offset-2">
+						<textarea input="card.notes" class="material__input material__input--text-area" rows="4"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div ng-show="(card.gift != null) && (card.theme != null) && ((card.gift == 1 && card.sender != null && card.recipient != null) || (card.gift == 0))" class="row">
+			<div class="col-sm-6">
+			</div>
+			<div ng-click="next()" class="col-sm-6 material material--submit">
+				<div class="material__submit">
+					Next
 				</div>
 			</div>
 		</div>
 	</form>
-	</div>
+</div>

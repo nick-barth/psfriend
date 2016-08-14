@@ -22,7 +22,7 @@ function CardController ($scope, $state, $http, ProductService) {
 		$scope.card.theme = choice;
 	};
 
-	$scope.save = function () {
+	$scope.next = function () {
 		ProductService.product.card = $scope.card;
 		$state.go('address');
 	};

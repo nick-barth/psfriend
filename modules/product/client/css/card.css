@@ -82,3 +82,28 @@
 
 .card__why-icon--sm {
   max-height: 5em; }
+
+/*
+*	Card Details
+*/
+.card__note {
+  text-align: center; }
+
+.card__details-title {
+  text-align: center;
+  font-size: 1.3em;
+  padding-bottom: 1em;
+  padding-top: .5em; }
+
+.card__details-desc {
+  text-align: center;
+  padding-bottom: 3em; }
+
+.card__details-input-label {
+  text-align: center;
+  padding-bottom: .5em; }
+
+.card__details-input {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
