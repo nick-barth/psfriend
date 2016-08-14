@@ -8,6 +8,9 @@ angular
 PaymentController.$inject = ['$scope', '$state', '$http', 'ProductService'];
 
 function PaymentController ($scope, $state, $http, ProductService) {
+	if (!user) {
+		$state.go('signup');
+	}
 	$scope.ProductService = ProductService.product;
 
 	$scope.ProductService.user = user;
@@ -24,7 +27,7 @@ function PaymentController ($scope, $state, $http, ProductService) {
 			console.log($scope.ProductService);
 			$http.post('/api/product/add', $scope.ProductService)
 				.success(function (response) {
-					console.log('subscription added');
+					$state.go('thankyou');
 				});
 		};
 	};

@@ -24,6 +24,11 @@
   transition: 0.2s ease;
   width: 100%; }
 
+.material__input.size {
+  width: auto;
+  display: inline-block;
+  text-align: center; }
+
 .material__input.material__input--text-area {
   width: 100%;
   resize: none; }
@@ -95,6 +100,9 @@ input[type=number] {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   -webkit-transition: 0.1s ease;
   transition: 0.1s ease; }
+
+.material__no-padding {
+  padding: 0; }
 
 /* when hiding the picture */
 /* when showing the picture */
