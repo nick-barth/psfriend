@@ -15,6 +15,10 @@ function PaymentController ($scope, $state, $http, ProductService) {
 
 	$scope.ProductService.user = user;
 
+	$scope.back = function () {
+		$state.go('address');
+	};
+
 	$scope.submit = function () {
 		Stripe.card.createToken(paymentForm, $scope.stripeResponseHandler);
 	};

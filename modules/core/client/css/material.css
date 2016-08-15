@@ -9,6 +9,13 @@
   max-width: 90rem;
   margin: auto; }
 
+.material__title {
+  text-align: center;
+  font-size: 4.3rem;
+  padding-bottom: .8rem;
+  padding-top: .5em;
+  font-family: 'Cookie', cursive; }
+
 .material__input {
   display: block;
   box-sizing: border-box;

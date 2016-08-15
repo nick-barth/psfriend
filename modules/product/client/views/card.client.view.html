@@ -1,7 +1,7 @@
 <div class="container">
 	<form>
 		<div ng-hide="(card.gift != null)" class="material">
-			<div class="card__details-title">
+			<div class="material__title">
 				Who will be recieving this card?
 			</div>
 			<div class="card__why-options">
@@ -114,7 +114,7 @@
 			</div>
 		</div>
 		<div ng-show="(card.gift != null) && (card.theme != null) && (card.art == null)" class="material  animate">
-			<div ng-show="card.art == null" class="card__details-title">
+			<div ng-show="card.art == null" class="material__title">
 				Art
 			</div>
 			<div class="card__why-text">
@@ -165,7 +165,7 @@
 		</div>
 		<div ng-show="(card.gift != null) && (card.theme != null) && (card.art != null)" class="material  animate">
 			<div ng-show="card.gift != 0" class="col-sm-8 col-sm-offset-2">
-				<div class="card__details-title">
+				<div class="material__title">
 					Card Details
 				</div>
 				<div class="card__details-desc">
@@ -191,7 +191,7 @@
 			<div ng-show="(card.theme != null) && (card.art != null) && ((card.sender != null && card.recipient != null) || card.gift == 0)">
 				<div class="row">
 					<div class="col-sm-8 col-sm-offset-2">
-						<div class="card__details-title">
+						<div class="material__title">
 							Tell us why (optional)
 						</div>
 						<div class="card__details-desc">

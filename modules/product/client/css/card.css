@@ -105,12 +105,6 @@
 .card__note {
   text-align: center; }
 
-.card__details-title {
-  text-align: center;
-  font-size: 1.3em;
-  padding-bottom: 1em;
-  padding-top: .5em; }
-
 .card__details-desc {
   text-align: center;
   padding-bottom: 3em; }
