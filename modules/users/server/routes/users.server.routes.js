@@ -7,6 +7,7 @@ module.exports = function (app) {
 	// Setting up the users profile api
 	app.route('/api/users/me').get(users.me);
 	app.route('/api/user/settings').get(users.settings);
+	app.route('/api/user/cancel').post(users.cancel);
 	app.route('/api/users').put(users.update);
 	app.route('/api/users/accounts').delete(users.removeOAuthProvider);
 	app.route('/api/users/password').post(users.changePassword);

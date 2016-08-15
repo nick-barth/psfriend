@@ -16,12 +16,21 @@ function SettingsController ($scope, $http, Authentication) {
 		url: '/api/user/settings'
 	})
 	.success(function (response) {
-		console.log(response.subs);
 		$scope.subs = response.subs;
 	}).error(function (response) {
-		console.log('error');
 		$scope.error = response.message;
 	});
+
+	$scope.cancel = function (id) {
+		var id = {
+			id: id
+		};
+		$http.post('/api/user/cancel', id).success(function (response) {
+			$scope.subs = response.subs;
+		}).error(function (response) {
+			console.log(response);
+		});
+	};
 
 }
 }());

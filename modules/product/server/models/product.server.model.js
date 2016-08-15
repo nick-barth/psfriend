@@ -11,6 +11,7 @@ var mongoose = require('mongoose'),
  */
 
 var ProductSchema = new Schema({
+	sub_id: String,
 	user: {
 		type: Object
 	},
