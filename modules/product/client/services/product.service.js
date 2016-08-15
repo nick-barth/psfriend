@@ -12,10 +12,9 @@ function ProductService () {
 			card: {
 				theme: null,
 				art: null,
-				name: null,
 				sender: null,
+				recipient: null,
 				gift: null,
-				why: null,
 				note: null
 
 			},

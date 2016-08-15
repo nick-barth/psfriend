@@ -14,7 +14,7 @@ function routeConfig ($stateProvider) {
 	.state('settings', {
 		url: '/settings',
 		templateUrl: 'modules/users/client/views/settings/settings.client.view.html',
-		controller: 'SubscriptionsController',
+		controller: 'SettingsController',
 		data: {
 			pageTitle: 'Settings'
 		}

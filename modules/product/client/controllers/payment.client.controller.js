@@ -28,7 +28,6 @@ function PaymentController ($scope, $state, $http, ProductService) {
 			console.log(response.error);
 		} else {
 			$scope.ProductService.token = response.id;
-			console.log($scope.ProductService);
 			$http.post('/api/product/add', $scope.ProductService)
 				.success(function (response) {
 					$state.go('thankyou');

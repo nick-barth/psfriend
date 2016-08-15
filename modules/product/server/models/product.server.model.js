@@ -9,9 +9,18 @@ var mongoose = require('mongoose'),
 /**
  * Subscription Schema
  */
+
 var ProductSchema = new Schema({
 	user: {
 		type: Object
+	},
+	card: {
+		theme: String,
+		art: String,
+		sender: String,
+		recipient: String,
+		gift: String,
+		note: String
 	},
 	address: {
 		name: {
@@ -31,9 +40,6 @@ var ProductSchema = new Schema({
 		},
 		zip: {
 			type: Number,
-		},
-		country: {
-			type: String,
 		}
 	},
 	meta: {

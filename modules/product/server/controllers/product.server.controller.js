@@ -15,16 +15,17 @@ var path = require('path'),
 exports.add = function (req, res) {
 	let token = req.body.token;
 	let product = new Product(req.body);
+	console.log(product);
 	stripe.customers.create({
 		source: token,
 		plan: 'basic_test',
-		email: 'ethan'
+		email: product.user.email
 	}, function (err, customer) {
+			console.log('oh no');
 			console.log(err);
 		});
-		/*
+
 	product.save(function (err) {
-		console.log(err);
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
@@ -33,8 +34,6 @@ exports.add = function (req, res) {
 			console.log('success');
 		}
 	});
-	*
 
 	return res.sendStatus(200);
-	*/
 };

@@ -8,6 +8,10 @@ angular
 SettingsController.$inject = ['$scope', '$http', 'Authentication'];
 
 function SettingsController ($scope, $http, Authentication) {
-	console.log('wow');
+	if (!user) {
+		state.go('login');
+	}
+	$scope.user = user;
+
 }
 }());
