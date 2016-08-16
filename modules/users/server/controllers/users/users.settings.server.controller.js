@@ -9,7 +9,7 @@ var _ = require('lodash'),
 	mongoose = require('mongoose'),
 	User = mongoose.model('User'),
 	Product = mongoose.model('Product'),
-	stripe = require('stripe')('sk_test_tPfzyUAM233jL497ICuteBSn');
+	stripe = require('stripe')(config.stripe.secretKey);
 
 exports.settings = function (req, res) {
 	Product.find({ 'user.email': req.user.email }, function (err, docs) {

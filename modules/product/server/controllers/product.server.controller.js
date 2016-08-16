@@ -3,10 +3,11 @@
 /**
  * Module dependencies
  */
-var path = require('path'),
+var	path = require('path'),
+	config = require(path.resolve('./config/config')),
 	bodyParser = require('body-parser'),
 	mongoose = require('mongoose'),
-	stripe = require('stripe')('sk_test_tPfzyUAM233jL497ICuteBSn'),
+	stripe = require('stripe')(config.stripe.secretKey),
 	Product = mongoose.model('Product');
 
 /**
