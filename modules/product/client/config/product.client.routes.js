@@ -27,6 +27,11 @@
 			url: '/onboard/payment',
 			templateUrl: 'modules/product/client/views/payment.client.view.html',
 			controller: 'PaymentController',
+		})
+		.state('thankyou', {
+			url: '/onboard/thanks',
+			templateUrl: 'modules/product/client/views/thanks.client.view.html',
+			controller: 'ThanksController',
 		});
 	}
 }());

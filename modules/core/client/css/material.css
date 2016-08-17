@@ -16,6 +16,10 @@
   padding-top: .5em;
   font-family: 'Cookie', cursive; }
 
+.material__text {
+  padding-bottom: 1em;
+  text-align: center; }
+
 .material__input {
   display: block;
   box-sizing: border-box;
