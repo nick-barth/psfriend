@@ -1,24 +1,26 @@
 <nav class="navbar navbar-fixed-top" role="navigation" ng-controller="HeaderController as vm">
-	<div ng-href="home" class="col-sm-4 navbar__brand">
-		p.s. Friend
-	</div>
-	<div class="col-sm-8">
-		<ul class="navbar__links">
-			<li class='navbar__link' data-anchor='about'>
-				How it works
-			</li>
-			<li class='navbar__link' data-anchor='skills'>
-				The Writers
-			</li>
-			<li class='navbar__link' data-anchor="writers">
-				F.A.Q.
-			</li>
-			<li class='navbar__link' ui-sref="authentication.signin" ng-hide="vm.authentication.user" data-anchor='work'>
-				Sign In
-			</li>
-			<li class='navbar__link'  ng-href="/api/auth/signout" ng-show="vm.authentication.user" data-anchor='contact'>
-				Signout
-			</li>
-		</ul>
+	<div class="row">
+		<div ng-href="home" class="col-sm-4 navbar__brand">
+			p.s. Friend
+		</div>
+		<div class="col-sm-8">
+			<ul class="navbar__links">
+				<li class='navbar__link' data-anchor='about'>
+					How it works
+				</li>
+				<li class='navbar__link' data-anchor='skills'>
+					The Writers
+				</li>
+				<li class='navbar__link' data-anchor="writers">
+					F.A.Q.
+				</li>
+				<li class='navbar__link' ui-sref="authentication.signin" ng-hide="vm.authentication.user" data-anchor='work'>
+					Sign In
+				</li>
+				<li class='navbar__link' ng-href="/api/auth/signout" ng-show="vm.authentication.user" data-anchor='contact'>
+					Signout
+				</li>
+			</ul>
+		</div>
 	</div>
 </nav>

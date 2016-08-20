@@ -1,11 +1,16 @@
 (function () {
-  'use strict';
+'use strict';
 
-  angular
-    .module('core')
-    .controller('HomeController', HomeController);
+angular
+	.module('product')
+	.controller('HomeController', HomeController);
 
-  function HomeController() {
-    var vm = this;
-  }
+HomeController.$inject = ['$scope', '$state'];
+
+function HomeController ($scope, $state) {
+
+	$scope.signup = function () {
+		$state.go('card');
+	};
+}
 }());

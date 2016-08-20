@@ -1,14 +1,19 @@
+/* fonts */
+@import 'https://fonts.googleapis.com/css?family=EB+Garamond';
+
+/* colours */
+
 $black: #161a1e;
 $white: #FFFAF0;
 $grey: #CCC;
 $light-grey: #E9E9E9;
 $grey-text: #505050;
-$peach: #ef9e9f;
+$peach: #FF7260;
 $error: #cc0000;
 $blue: #9BD7D5;
+$milk: #FFF5C3;
+$teal: #129793;
 
-
-$max-width: 80em;
 
 
 @mixin box-shadow($level) {

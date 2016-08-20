@@ -1,0 +1,48 @@
+@import "../../../utilities/global.scss";
+
+.home {
+}
+
+.home__splash {
+	background-image: url(../img/background/splash.jpg);
+	background-size:cover;
+	height: calc(100vh);
+}
+.home__splash-container {
+	height:100%;
+}
+
+.home__splash-text-container {
+	position: relative;
+	top: calc(50% - 25px);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	text-align:center;
+	color:$white;
+	font-family: 'EB Garamond', serif;
+}
+
+.home__splash-text--title {
+	font-size:4rem;
+}
+
+.home__splash-text--tagline {
+	font-size:3rem;
+	max-width:80em;
+}
+
+.home__splash-send {
+	font-size: 4rem;
+	width: 7em;
+	margin: auto;
+	background-color: $teal;
+	border-radius: 4em;
+	margin-top: 2em;
+	cursor:pointer;
+}
+
+.home__how {
+	background-color:$milk;
+	height:80em;
+}

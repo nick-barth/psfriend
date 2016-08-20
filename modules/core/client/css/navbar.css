@@ -1,12 +1,13 @@
+/* fonts */
 @import 'https://fonts.googleapis.com/css?family=EB+Garamond';
+/* colours */
 .navbar {
   padding-top: 1em; }
 
 .navbar__links {
   list-style: none;
-  text-align: right;
-  line-height: 3em;
-  font-size: 2.2rem; }
+  line-height: 4em;
+  font-size: 1.7rem; }
 
 .navbar__link {
   color: #FFFAF0;
