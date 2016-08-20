@@ -1,39 +1,31 @@
 @import "../../../utilities/global.scss";
-
+@import 'https://fonts.googleapis.com/css?family=EB+Garamond';
 .navbar {
-	width:100%;
-	display:table;
-	background-color: $white;
-	height: 5em;
-	@include box-shadow(1);
+	padding-top:1em;
 
-	ul {
-		display: table-cell;
-		vertical-align: middle;
-		padding:0;
-		li {
-			display:table-cell;
-			text-decoration: none;
-			padding:0;
-			padding-left: 1em;
-			padding-right: 1em;
-			float:right;
-		}
-	}
 }
-.navbar__container {
-	height: 5em;
-	width: 80%;
-	max-width: $max-width;
-	display: table;
-	margin: auto;
+.navbar__links {
+	list-style:none;
+	text-align:right;
+	line-height:3em;
+	font-size: 2.2rem;
 }
-
+.navbar__link {
+	color:$white;
+	padding-left: 3em;
+	display: inline-block;
+	cursor:pointer;
+	font-family: 'EB Garamond', serif;
+	text-transform:uppercase;
+}
 
 .navbar__brand {
-	display:table-cell;
-	vertical-align:middle;
-	font-size:1.5em;
+	font-size:6rem;
 	width:33%;
 	padding-left:1em;
+	font-family: 'Cookie', cursive;
+	text-decoration:none;
+	color:$white;
+	text-align:center;
+	cursor:pointer;
 }

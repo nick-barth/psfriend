@@ -1,31 +1,27 @@
+@import 'https://fonts.googleapis.com/css?family=EB+Garamond';
 .navbar {
-  width: 100%;
-  display: table;
-  background-color: #FFFAF0;
-  height: 5em;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
-  .navbar ul {
-    display: table-cell;
-    vertical-align: middle;
-    padding: 0; }
-    .navbar ul li {
-      display: table-cell;
-      text-decoration: none;
-      padding: 0;
-      padding-left: 1em;
-      padding-right: 1em;
-      float: right; }
+  padding-top: 1em; }
 
-.navbar__container {
-  height: 5em;
-  width: 80%;
-  max-width: 80em;
-  display: table;
-  margin: auto; }
+.navbar__links {
+  list-style: none;
+  text-align: right;
+  line-height: 3em;
+  font-size: 2.2rem; }
+
+.navbar__link {
+  color: #FFFAF0;
+  padding-left: 3em;
+  display: inline-block;
+  cursor: pointer;
+  font-family: 'EB Garamond', serif;
+  text-transform: uppercase; }
 
 .navbar__brand {
-  display: table-cell;
-  vertical-align: middle;
-  font-size: 1.5em;
+  font-size: 6rem;
   width: 33%;
-  padding-left: 1em; }
+  padding-left: 1em;
+  font-family: 'Cookie', cursive;
+  text-decoration: none;
+  color: #FFFAF0;
+  text-align: center;
+  cursor: pointer; }
