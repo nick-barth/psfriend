@@ -4,6 +4,9 @@
 .navbar {
   padding-top: 1em; }
 
+.navbar--scrolled {
+  color: #505050; }
+
 .navbar__links {
   list-style: none;
   line-height: 4em;
