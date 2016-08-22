@@ -26,13 +26,14 @@
   max-width: 80em; }
 
 .home__splash-send {
-  font-size: 4rem;
+  font-size: 2rem;
   width: 7em;
   margin: auto;
-  background-color: #129793;
+  background-color: #FF7260;
   border-radius: 4em;
-  margin-top: 2em;
-  cursor: pointer; }
+  margin-top: 1em;
+  cursor: pointer;
+  line-height: 2em; }
 
 .home__how {
   background-color: #FFF5C3;
