@@ -2,7 +2,10 @@
 	<form>
 		<div ng-hide="(card.gift != null)" class="material">
 			<div class="material__title">
-				Who will be recieving this card?
+				Who?
+			</div>
+			<div class="card__why-text">
+				Is this for yourself?  Your friend? Your cat? Your Mom's gardener's daughter?
 			</div>
 			<div class="card__why-options">
 				<div class="row">
@@ -48,6 +51,9 @@
 			</div>
 		</div>
 		<div ng-show="(card.gift != null) && (card.theme == null)" class="material animate">
+			<div class="material__title">
+				Why?
+			</div>
 			<div ng-show="card.theme == null" class="card__why-text">
 				Great! Now tell us a little more about why you want to send a nice hand written card.
 			</div>
