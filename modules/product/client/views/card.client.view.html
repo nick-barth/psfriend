@@ -31,7 +31,7 @@
 				</div>
 			</div>
 		</div>
-		<div ng-show="(card.gift != null)" class="material">
+		<div ng-show="(card.gift != null)">
 			<div class="row card__why-sm">
 				<div ng-click="gift(0)" ng-class="card.gift == 0 ? 'card__why-option-container--sm col-sm-6 is-active' : 'card__why-option-container--sm col-sm-6'">
 					<div class="card__why-option-title--sm">
@@ -91,7 +91,7 @@
 				</div>
 			</div>
 		</div>
-		<div ng-show="(card.gift != null) && (card.theme != null)" class="material">
+		<div ng-show="(card.gift != null) && (card.theme != null)" >
 			<div class="row card__why-sm">
 				<div ng-click="why(1)" ng-class="card.theme == 1 ? 'card__why-option-container--sm col-sm-4 is-active' : 'card__why-option-container--sm col-sm-4'">
 					<div class="card__why-option-title--sm">
@@ -147,7 +147,7 @@
 				</div>
 			</div>
 		</div>
-		<div ng-show="(card.gift != null) && (card.theme != null) && (card.art != null)" class="material">
+		<div ng-show="(card.gift != null) && (card.theme != null) && (card.art != null)">
 			<div class="row card__why-sm">
 				<div ng-click="art(1)" ng-class="card.art == 1 ? 'card__why-option-container--sm col-sm-6 is-active' : 'card__why-option-container--sm col-sm-6'">
 					<div class="card__why-option-title--sm">
