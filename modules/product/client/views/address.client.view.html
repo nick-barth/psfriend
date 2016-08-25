@@ -12,7 +12,7 @@
 					<div class="material__input-label">
 						Full Name:
 					</div>
-					<input name="name" ng-required="true" ng-model="address.name" type="text" class="material__input">
+					<input name="name" ng-required="true" event-focus="address.name == null" ng-model="address.name" type="text" class="material__input">
 				</div>
 			</div>
 			<div class="row">
