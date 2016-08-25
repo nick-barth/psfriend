@@ -1,6 +1,11 @@
+/* fonts */
+@import 'https://fonts.googleapis.com/css?family=EB+Garamond';
+/* colours */
 .form__title {
   text-align: center;
   font-size: 1.5em; }
 
 .form__description {
-  text-align: center; }
+  text-align: center;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #E9E9E9; }
