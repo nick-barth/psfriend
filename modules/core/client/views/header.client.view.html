@@ -1,28 +1,29 @@
 <div ng-controller="HeaderController">
-	<nav class="navbar" nav-scroller ng-class="{'navbar-fixed-top' : fixed}" set-fixed="navbar--scrolled" role="navigation">
+	<nav class="navbar container" nav-scroller ng-class="{'navbar--fixed-top' : fixed}" role="navigation">
 		<div class="row">
-			<div ng-href="home" class="col-sm-4 navbar__brand">
+			<div ng-href="home" class="navbar__brand">
 				p.s. Friend
 			</div>
-			<div class="col-sm-8">
-				<ul class="navbar__links">
-					<li class='navbar__link' data-anchor='about'>
-						How it works
-					</li>
-					<li class='navbar__link' data-anchor='skills'>
-						The Writers
-					</li>
-					<li class='navbar__link' data-anchor="writers">
-						F.A.Q.
-					</li>
-					<li class='navbar__link' ui-sref="authentication.signin" ng-hide="vm.authentication.user" data-anchor='work'>
-						Sign In
-					</li>
-					<li class='navbar__link' ng-href="/api/auth/signout" ng-show="vm.authentication.user" data-anchor='contact'>
-						Signout
-					</li>
-				</ul>
-			</div>
+			<ul class="navbar__links">
+				<li ui-sref="home" class="navbar__link" ng-if="!fixed">
+					Home
+				</li>
+				<li class='navbar__link' ng-if="fixed" data-anchor='about'>
+					How it works
+				</li>
+				<li class='navbar__link' ng-if="fixed" data-anchor='skills'>
+					The Writers
+				</li>
+				<li class='navbar__link' ng-if="fixed" data-anchor="writers">
+					F.A.Q.
+				</li>
+				<li class='navbar__link' ui-sref="authentication.signin" ng-hide="vm.authentication.user" data-anchor='work'>
+					Sign In
+				</li>
+				<li class='navbar__link' ng-href="/api/auth/signout" ng-show="vm.authentication.user" data-anchor='contact'>
+					Signout
+				</li>
+			</ul>
 		</div>
 	</nav>
 </div>

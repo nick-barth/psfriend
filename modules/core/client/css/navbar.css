@@ -2,15 +2,30 @@
 @import 'https://fonts.googleapis.com/css?family=EB+Garamond';
 /* colours */
 .navbar {
-  padding-top: 1em; }
+  padding-top: 1em;
+  margin-bottom: 0;
+  max-width: 90em;
+  margin: auto;
+  display: inline-block; }
+
+.navbar--fixed-top {
+  position: absolute;
+  -webkit-transition: .2s all ease;
+  transition: .2s all ease;
+  width: 100%; }
 
 .navbar--scrolled {
-  background-color: #129793; }
+  background-color: #129793;
+  position: fixed;
+  font-size: .8em;
+  z-index: 100; }
 
 .navbar__links {
   list-style: none;
   line-height: 4em;
-  font-size: 1.7rem; }
+  font-size: 1.7rem;
+  display: inline-block;
+  float: right; }
 
 .navbar__link {
   color: #FFFAF0;
@@ -28,4 +43,5 @@
   text-decoration: none;
   color: #FFFAF0;
   text-align: center;
-  cursor: pointer; }
+  cursor: pointer;
+  display: inline-block; }

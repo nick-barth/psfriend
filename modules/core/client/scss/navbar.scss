@@ -2,16 +2,31 @@
 
 .navbar {
 	padding-top:1em;
+	margin-bottom:0;
+	max-width: $max-width;
+	margin:auto;
+	display:inline-block;
 
+}
+
+.navbar--fixed-top {
+	position: absolute;
+	transition:.2s all ease;
+	width:100%;
 }
 
 .navbar--scrolled {
 	background-color:$teal;
+	position: fixed;
+	font-size:.8em;
+	z-index: 100;
 }
 .navbar__links {
 	list-style: none;
 	line-height: 4em;
 	font-size: 1.7rem;
+	display:inline-block;
+		float: right;
 }
 .navbar__link {
 	color:$white;
@@ -31,4 +46,5 @@
 	color:$white;
 	text-align:center;
 	cursor:pointer;
+	display:inline-block;
 }
