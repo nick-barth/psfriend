@@ -20,8 +20,8 @@
 .material__title {
   text-align: center;
   font-size: 4.3rem;
-  padding-bottom: .8rem;
-  padding-top: .5em;
+  padding-bottom: 0.8rem;
+  padding-top: 0.5em;
   font-family: 'Cookie', cursive; }
 
 .material__text {
@@ -34,36 +34,27 @@
   border: none;
   background-color: #fff7e6;
   color: #505050;
-  border-bottom: 1px solid #CCC;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 1.5em;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
-  width: 100%; }
-
-.material__input.size {
-  width: auto;
-  display: inline-block;
-  text-align: center; }
+  width: 100%;
+  border-bottom: 1px solid #CCC;
+  padding-left: .2em; }
+  .material__input:focus {
+    border-bottom: 1px solid #FF7260; }
 
 .material__input.material__input--text-area {
   width: 100%;
   resize: none; }
 
-.material__input:focus,
-.material__input:hover {
-  border-bottom: 1px solid #FF7260;
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
-  background-color: #fff0d1; }
-
 .material__input-label {
   padding-top: 1em;
   font-family: 'Cookie', cursive; }
 
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0; }
 
@@ -105,8 +96,7 @@ input[type=number] {
 
 .material--submit {
   padding: 0;
-  margin: 0;
-  margin-bottom: 4em; }
+  margin: 0 0 4em; }
 
 .material__submit:focus,
 .material__submit:hover {

@@ -1,5 +1,4 @@
 @import "../../../utilities/global.scss";
-
 .material {
 	border-radius: 2px;
 	background: $white;
@@ -10,27 +9,23 @@
 	padding-right: 2em;
 	padding-bottom: 2em;
 	background-image: url("../img/background/giftly.png");
-   	background-repeat: repeat;
+	background-repeat: repeat;
 }
-
 .material--width {
-	max-width:90rem;
+	max-width: 90rem;
 	margin: auto;
 }
-
 .material__title {
 	text-align: center;
 	font-size: 4.3rem;
-	padding-bottom: .8rem;
-	padding-top: .5em;
+	padding-bottom: 0.8rem;
+	padding-top: 0.5em;
 	font-family: 'Cookie', cursive;
 }
-
 .material__text {
-	padding-bottom:1em;
-	text-align:center;
+	padding-bottom: 1em;
+	text-align: center;
 }
-
 .material__input-container {}
 .material__input {
 	display: block;
@@ -38,44 +33,35 @@
 	border: none;
 	background-color: darken( $white, 2% );
 	color: $grey-text;
-	border-bottom: 1px solid $grey;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
 	font-size: 1.5em;
 	transition: 0.2s ease;
-	width:100%;
+	width: 100%;
+	border-bottom:1px solid $grey;
+	padding-left:.2em;
+
+	&:focus {
+		border-bottom: 1px solid $peach;
+	}
 }
 
-.material__input.size {
-	width:auto;
-	display:inline-block;
-	text-align:center;
-}
 .material__input.material__input--text-area {
 	width: 100%;
 	resize: none;
 }
-.material__input:focus,
-.material__input:hover {
-	border-bottom: 1px solid $peach;
-	transition: 0.2s ease;
-	background-color: darken( $white, 6% );
-}
 .material__input-label {
-	padding-top:1em;
+	padding-top: 1em;
 	font-family: 'Cookie', cursive;
 }
-
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
-
 input[type=number] {
-    -moz-appearance:textfield;
+	-moz-appearance: textfield;
 }
-
 .material__input--text-area {
 	display: block;
 	box-sizing: border-box;
@@ -89,13 +75,11 @@ input[type=number] {
 	font-size: 1.5em;
 	transition: 0.2s ease;
 }
-
 .material__input-error {
 	height: 3em;
 	text-align: center;
 	color: $error;
 }
-
 .material__submit {
 	background: $peach;
 	border: none;
@@ -109,13 +93,10 @@ input[type=number] {
 	padding-bottom: 1em;
 	text-align: center;
 }
-
 .material--submit {
-	padding:0;
-	margin:0;
-	margin-bottom: 4em;
+	padding: 0;
+	margin: 0 0 4em;
 }
-
 .material__submit:focus,
 .material__submit:hover {
 	opacity: 0.8;
@@ -127,45 +108,55 @@ input[type=number] {
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 	transition: 0.1s ease;
 }
-
 .material__no-padding {
 	padding: 0;
 }
-
-
 /* when hiding the picture */
-
 /* when showing the picture */
-.ng-hide-remove.animate     {
-	animation:1s fadein ease;
+.ng-hide-remove.animate {
+	animation: 1s fadein ease;
 }
-
-
 @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
-
 /* Firefox < 16 */
 @-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
-
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
-
 /* Internet Explorer */
 @-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
-
 /* Opera < 12.1 */
 @-o-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
