@@ -13,10 +13,6 @@
   background-image: url("../img/background/giftly.png");
   background-repeat: repeat; }
 
-.material--subtle {
-  background-image: url("../img/background/giftly.png");
-  background-repeat: repeat; }
-
 .material--width {
   max-width: 90rem;
   margin: auto; }
