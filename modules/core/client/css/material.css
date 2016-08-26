@@ -9,7 +9,13 @@
   margin: auto auto 2em;
   padding-left: 2em;
   padding-right: 2em;
-  padding-bottom: 2em; }
+  padding-bottom: 2em;
+  background-image: url("../img/background/giftly.png");
+  background-repeat: repeat; }
+
+.material--subtle {
+  background-image: url("../img/background/giftly.png");
+  background-repeat: repeat; }
 
 .material--width {
   max-width: 90rem;

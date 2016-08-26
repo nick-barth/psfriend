@@ -1,104 +1,67 @@
 @import "../../../utilities/global.scss";
 
-/*
-* WHO
-*/
-
-.card__who-text {
-	text-align:center;
-	padding-bottom: 3em;
-	padding-top:1em;
-}
-
-.card__who-options {
-	padding-bottom:3em;
-}
-
-.card__who-option {
-	cursor:pointer;
-	text-align: center;
-	padding-top: 3em;
-	padding-bottom: 3em;
-}
-
-.card__who-options-selected {
-	@include box-shadow(2);
-}
-
-.card__who-options-selected .card__who-option {
-	padding: 1em;
-}
-
-.card__who-options-selected .card__who-option-selected {
-	padding: 1em;
-	background-color:$blue;
-	color:$white;
-	text-align: center;
-}
-
-.card__who-option:hover {
-	background-color: darken($white, 1%);
-}
-
-.card__who-option:nth-child(1){
-	border-right: 1px solid $light-grey;
-}
 
 /*
-* Why
+* Options
 */
-.card__why-options {
-	padding-bottom:2em;
+.card__options {
+	display: flex;
+	flex:1 1 auto;
 }
 
-.card__why-option {
+.card__option {
 	text-align:center;
 	padding-top:2em;
-}
-
-.card__why-option-container {
 	@include box-shadow(2);
-	background-color:$blue;
-	color:$white;
+	background-color:$white;
+	color:$grey-text;
 	padding:2em;
 	cursor:pointer;
+
+	margin: 1em;
+	display: flex;
+	flex: 1 100%;
+	flex-flow: column nowrap;
 }
 
-.card__why-option-selected {
+.card__option-selected {
 	@include box-shadow(0);
 	background-color:$blue;
 	color:$white;
 	padding: 0;
 }
 
-.card__why-icon {
-	height:12em;
+.card__icon {
+
 }
 
-
-.card__why-option-container:hover {
+.card__option:hover {
 	background-color: darken($blue, 5%);
 }
 
-.card__why-option-title {
-
+.card__option-title {
+	font-family: 'Cookie', cursive;
+	font-size: 4.3rem;
 }
 
-.card__why-text {
+.card__text-text {
 	text-align:center;
 	padding-top:1em;
+	padding-bottom: 1em;
 }
 
-.card__why-icon {
+.card__icon {
 }
 
 // sm
 
-.card__why-sm {
+.card__option-sm {
 	@include box-shadow(2);
+	max-width:$max-width;
+	margin:auto;
 }
 
-.card__why-option-container--sm {
+.card__option-container--sm {
 	cursor: pointer;
 	text-align:center;
 	padding-left: 0;
@@ -108,34 +71,21 @@
 	background-color:$white;
 }
 
-.card__why-option-container--sm.is-active {
+.card__option-container--sm.is-active {
 	background-color:$blue;
 	color:$white;
 }
 
-.card__why-icon--sm {
-	max-height:5em;
+.card__option-title--sm {
+	font-family: 'Cookie', cursive;
+	font-size: 3em;
 }
 
-/*
-*	Card Art
-*/
-.card__art-option {
-	text-align:center;
-	cursor:pointer;
+.card__icon--sm {
+	width: 5em;
+	margin: auto;
 }
 
-.card__art-icon {
-	max-height:7em;
-}
-
-.card__art-option-selected {
-	@include box-shadow(0);
-	background-color:$blue;
-	color:$white;
-	padding: 0;
-	text-align:center;
-}
 
 /*
 *	Card Details
