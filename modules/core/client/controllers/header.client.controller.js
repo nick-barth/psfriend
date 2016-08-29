@@ -2,15 +2,17 @@
 'use strict';
 
 angular
-		.module('core')
+		.module('core').run(['$rootScope', '$state',
+			function ($rootScope, $state) {
+				$rootScope.$on('$stateChangeSuccess', function () {
+					$rootScope.fixed = $state.current.name == 'home';
+				});
+			}
+		])
 		.controller('HeaderController', HeaderController);
 
-HeaderController.$inject = ['$scope', '$state', '$timeout', 'Authentication'];
+HeaderController.$inject = ['$rootScope', '$scope', '$state', '$timeout', 'Authentication'];
 
-function HeaderController ($scope, $state, $timeout, Authentication) {
-	$timeout(function () { $state.current.name == 'home' ? $scope.fixed = true : $scope.fixed = false; }, 100);
-	$scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-		$state.current.name == 'home' ? $scope.fixed = true : $scope.fixed = false;
-	});
+function HeaderController ($rootScope, $scope, $state, $timeout, Authentication) {
 }
 }());

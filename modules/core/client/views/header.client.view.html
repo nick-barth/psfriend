@@ -1,29 +1,65 @@
 <div ng-controller="HeaderController">
-	<nav class="navbar container" nav-scroller ng-class="{'navbar--fixed-top' : fixed}" role="navigation">
-		<div class="row">
-			<div ng-href="home" class="navbar__brand">
-				p.s. Friend
+	<div nav-scroller class="container" ui-sref-active="active" ng-class="{'header--fixed-top' : fixed}">
+		<div ng-href="home" class="header__brand">
+		</div>
+		<div class="header__links">
+			<div ui-sref="home" class="header__link" ng-if="!fixed">
+				Home
 			</div>
-			<ul class="navbar__links">
-				<li ui-sref="home" class="navbar__link" ng-if="!fixed">
+			<div class='header__link' ng-if="fixed" data-anchor='about'>
+				How it works
+			</div>
+			<div class='header__link' ng-if="fixed" data-anchor='skills'>
+				The Writers
+			</div>
+			<div class='header__link' ng-if="fixed" data-anchor="writers">
+				F.A.Q.
+			</div>
+			<div class='header__link' ui-sref="authentication.signin" ng-hide="vm.authentication.user" data-anchor='work'>
+				Sign In
+			</div>
+			<div class='header__link' ng-href="/api/auth/signout" ng-show="vm.authentication.user" data-anchor='contact'>
+				Signout
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<!--
+<div ng-controller="HeaderController">
+	<nav class="container" nav-scroller ng-class="{'header--fixed-top' : fixed}" role="navigation">
+			<div ng-href="home" class="header__brand">
+			</div>
+			<ul class="header__links">
+				<li ui-sref="home" class="header__link" ng-if="!fixed">
 					Home
 				</li>
-				<li class='navbar__link' ng-if="fixed" data-anchor='about'>
+				<li class='header__link' ng-if="fixed" data-anchor='about'>
 					How it works
 				</li>
-				<li class='navbar__link' ng-if="fixed" data-anchor='skills'>
+				<li class='header__link' ng-if="fixed" data-anchor='skills'>
 					The Writers
 				</li>
-				<li class='navbar__link' ng-if="fixed" data-anchor="writers">
+				<li class='header__link' ng-if="fixed" data-anchor="writers">
 					F.A.Q.
 				</li>
-				<li class='navbar__link' ui-sref="authentication.signin" ng-hide="vm.authentication.user" data-anchor='work'>
+				<li class='header__link' ui-sref="authentication.signin" ng-hide="vm.authentication.user" data-anchor='work'>
 					Sign In
 				</li>
-				<li class='navbar__link' ng-href="/api/auth/signout" ng-show="vm.authentication.user" data-anchor='contact'>
+				<li class='header__link' ng-href="/api/auth/signout" ng-show="vm.authentication.user" data-anchor='contact'>
 					Signout
 				</li>
 			</ul>
-		</div>
 	</nav>
 </div>
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    ...
+  </div>
+</nav>

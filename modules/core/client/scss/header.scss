@@ -1,0 +1,52 @@
+@import "../../../utilities/global.scss";
+
+.header {
+	padding-top:1em;
+	margin-bottom:0;
+	max-width: $max-width;
+	margin:auto;
+	display:inline-block;
+}
+
+.header--fixed-top {
+	width: 75%;
+	position: fixed;
+	left: 50%;
+	margin-left: -37.5%;
+	padding:0;
+}
+
+.header--scrolled {
+	background-color:$teal;
+	position: fixed;
+	z-index: 100;
+	left: 0;
+	width: 100%;
+	margin-left: 0;
+	padding-right:12.5%;
+	padding-left:12.5%;
+	transition: background-color .5s linear;
+
+}
+
+.header__links {
+	float: right;
+	line-height: 4em;
+}
+.header__link {
+	color:$white;
+	padding-left: 3em;
+	display: inline-block;
+	cursor:pointer;
+	font-family: 'EB Garamond', serif;
+	text-transform:uppercase;
+}
+
+.header__brand {
+	background: url(../img/brand/psfriend5-white.svg) no-repeat top left;
+	background-size: contain;
+	height:8em;
+	width:10em;
+	display:inline-block;
+	float: left;
+}
