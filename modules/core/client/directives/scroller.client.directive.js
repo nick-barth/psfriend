@@ -2,26 +2,32 @@
 'use strict';
 
 angular
-	.module('core')
+	.module('core').run(['$rootScope', '$state',
+		function ($rootScope, $state) {
+			$rootScope.$on('$stateChangeSuccess', function () {
+				$rootScope.fixed = $state.current.name == 'home';
+			});
+		}
+	])
 	.directive('navScroller', navScroller);
 
-navScroller.$inject = ['$window'];
-
-function navScroller ($window) {
+function navScroller ($rootScope, $window, $timeout) {
 	return {
 		link: function (scope, element, attrs) {
-			if (angular.element(element).hasClass('header--fixed-top')) {
-				angular.element($window).bind('scroll', function () {
-					if ($window.scrollY > 25) {
-						element.addClass('header--scrolled');
-						element.removeClass('header--fixed-top');
-					} else {
-						element.removeClass('header--scrolled');
-						element.addClass('header--fixed-top');
-					}
+			$timeout(function () {
+				if ($rootScope.fixed) {
+					angular.element($window).bind('scroll', function () {
+						if ($window.scrollY > 25) {
+							element.addClass('header--scrolled');
+							element.removeClass('header--fixed-top');
+						} else {
+							element.removeClass('header--scrolled');
+							element.addClass('header--fixed-top');
+						}
 
-				});
-			}
+					});
+				}
+			});
 		}
 	};
 }
