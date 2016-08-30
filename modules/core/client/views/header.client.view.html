@@ -1,5 +1,5 @@
 <div ng-controller="HeaderController">
-	<div nav-scroller class="container" ui-sref-active="active" ng-class="{'header--fixed-top' : fixed}">
+	<div nav-scroller class="container" ng-class=" fixed ? 'header--fixed-top' : 'header' ">
 		<div ng-href="home" class="header__brand">
 		</div>
 		<div class="header__links">

@@ -15,8 +15,8 @@ function navScroller ($rootScope, $window, $timeout) {
 	return {
 		link: function (scope, element, attrs) {
 			$timeout(function () {
-				if ($rootScope.fixed) {
-					angular.element($window).bind('scroll', function () {
+				angular.element($window).bind('scroll', function () {
+					if ($rootScope.fixed) {
 						if ($window.scrollY > 25) {
 							element.addClass('header--scrolled');
 							element.removeClass('header--fixed-top');
@@ -24,9 +24,8 @@ function navScroller ($rootScope, $window, $timeout) {
 							element.removeClass('header--scrolled');
 							element.addClass('header--fixed-top');
 						}
-
-					});
-				}
+					}
+				});
 			});
 		}
 	};
