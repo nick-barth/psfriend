@@ -1,21 +1,38 @@
-<div class="login">
-	<div class="login__left">
-		<div class="login__header">Welcome back</div>
-		<form name="vm.userForm" ng-submit="vm.signin(vm.userForm.$valid)">
-			<input type="email" name="email" ng-model="vm.credentials.email" placeholder="Email" required/>
-			<div ng-messages="vm.userForm.username.$error" role="alert">
-				<p class="help-block error-text" ng-message="required">Username is required.</p>
+<div class="container">
+	<div class="material">
+		<form name="vm.userForm" ng-submit="vm.signin(vm.userForm.$valid)" novalidate>
+			<div class="material__title">
+				Welcome Back
 			</div>
-			<input type="password" name="password" ng-model="vm.credentials.password" required />
-			<div ng-messages="vm.userForm.password.$error" role="alert">
-				<p class="help-block error-text" ng-message="required">Password is required.</p>
+			<div class="form__description">
+				We used your email as your account name. And you made up your password. Imagination.
 			</div>
-
-			<uib-alert type="danger" ng-show="vm.error" class="text-center text-danger">
-				<span ng-bind="vm.error"></span>
-			</uib-alert>
-
-			<input type="submit" name="signup_submit" value="Sign in" />
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="material__input-label">
+						Email:
+					</div>
+					<input name="email" ng-required="true" type="text" class="material__input" ng-model="vm.credentials.username">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="material__input-label">
+						Password:
+					</div>
+					<input name="password1" ng-required="true" ng-model="vm.credentials.password" type="password" class="material__input">
+				</div>
+			</div>
+		</form>
+		<div class="material__input-error" ng-show="signupForm.$error.passwordVerify">
+			Passwords must match.
+		</div>
+		<div class="material__input-error" ng-show="error">
+			Email is already in use.
+		</div>
+		<div class="col-sm-12">
+			<input type="submit" class="material__submit inline" value="Sign in" />
+		</div>
 		</form>
 		<div class="login__text">
 			<a ui-sref="authentication.signup"> Don't have an account? Signup.</a>
@@ -24,13 +41,6 @@
 			<a ui-sref="password.forgot">Forgot your password? No problem.</a>
 		</div>
 	</div>
-	<div class="login__right">
-		<span class="login__with">Sign in with<br />social network</span>
-		<button ng-click="vm.callOauthProvider('/api/auth/facebook')" class="login__social facebook">Log in with facebook</button>
-		<button ng-click="vm.callOauthProvider('/api/auth/twitter')" class="login__social twitter">Log in with Twitter</button>
-		<button ng-click="vm.callOauthProvider('/api/auth/google')" class="login__social google">Log in with Google+</button>
-	</div>
-	<div class="login__or">OR</div>
 </div>
 
 

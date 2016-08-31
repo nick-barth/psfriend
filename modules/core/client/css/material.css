@@ -94,6 +94,11 @@ input[type=number] {
   padding-bottom: 1em;
   text-align: center; }
 
+.material__submit.inline {
+  background: #FF7260;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif; }
+
 .material--submit {
   padding: 0;
   margin: 0 0 4em; }
