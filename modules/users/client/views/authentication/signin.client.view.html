@@ -12,7 +12,7 @@
 					<div class="material__input-label">
 						Email:
 					</div>
-					<input name="email" ng-required="true" type="text" class="material__input" ng-model="vm.credentials.username">
+					<input name="email" ng-required="true" type="text" class="material__input" ng-model="vm.credentials.email">
 				</div>
 			</div>
 			<div class="row">
@@ -20,15 +20,11 @@
 					<div class="material__input-label">
 						Password:
 					</div>
-					<input name="password1" ng-required="true" ng-model="vm.credentials.password" type="password" class="material__input">
+					<input name="password" ng-required="true" ng-model="vm.credentials.password" type="password" class="material__input">
 				</div>
 			</div>
-		</form>
-		<div class="material__input-error" ng-show="signupForm.$error.passwordVerify">
-			Passwords must match.
-		</div>
 		<div class="material__input-error" ng-show="error">
-			Email is already in use.
+			Email or password is wrong.  Try resetting your password!
 		</div>
 		<div class="col-sm-12">
 			<input type="submit" class="material__submit inline" value="Sign in" />

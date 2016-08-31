@@ -26,7 +26,6 @@ function AuthenticationController ($scope, $state, $http, $location, $window, Au
 
 	function signup (isValid) {
 		vm.error = null;
-
 		if (!isValid) {
 			$scope.$broadcast('show-errors-check-validity', 'vm.userForm');
 
@@ -46,7 +45,6 @@ function AuthenticationController ($scope, $state, $http, $location, $window, Au
 
 	function signin (isValid) {
 		vm.error = null;
-
 		if (!isValid) {
 			$scope.$broadcast('show-errors-check-validity', 'vm.userForm');
 

@@ -5,9 +5,9 @@ angular
 	.module('product')
 	.controller('AddressController', AddressController);
 
-AddressController.$inject = ['$scope', '$state', '$http', 'ProductService'];
+AddressController.$inject = ['$scope', '$state', 'ProductService'];
 
-function AddressController ($scope, $state, $http, ProductService) {
+function AddressController ($scope, $state, ProductService) {
 	$scope.address = ProductService.product.address;
 
 	$scope.next = function () {
