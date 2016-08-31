@@ -97,7 +97,8 @@ input[type=number] {
 .material__submit.inline {
   background: #FF7260;
   color: #FFF;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  margin-top: 1em; }
 
 .material--submit {
   padding: 0;
@@ -118,6 +119,10 @@ input[type=number] {
 
 .material__no-padding {
   padding: 0; }
+
+.material__login-text {
+  padding-top: 1em;
+  font-size: 1rem; }
 
 /* when hiding the picture */
 /* when showing the picture */

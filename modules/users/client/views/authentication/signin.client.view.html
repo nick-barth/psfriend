@@ -23,19 +23,21 @@
 					<input name="password" ng-required="true" ng-model="vm.credentials.password" type="password" class="material__input">
 				</div>
 			</div>
-		<div class="material__input-error" ng-show="error">
-			Email or password is wrong.  Try resetting your password!
-		</div>
-		<div class="col-sm-12">
-			<input type="submit" class="material__submit inline" value="Sign in" />
-		</div>
+			<div class="material__input-error" ng-show="error">
+				Email or password is wrong. Try resetting your password!
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<input type="submit" class="material__submit inline" value="Sign in" />
+					<div class="material__login-text">
+						<a ui-sref="authentication.signup"> Don't have an account? Signup.</a>
+					</div>
+					<div class="material__login-text">
+						<a ui-sref="password.forgot">Forgot your password? No problem.</a>
+					</div>
+				</div>
+			</div>
 		</form>
-		<div class="login__text">
-			<a ui-sref="authentication.signup"> Don't have an account? Signup.</a>
-		</div>
-		<div class="login__text">
-			<a ui-sref="password.forgot">Forgot your password? No problem.</a>
-		</div>
 	</div>
 </div>
 
