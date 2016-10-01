@@ -4,18 +4,31 @@
     <meta charset="UTF-8">
     <title>Sample Site</title>
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <style>
-        body { padding-top:50px; }
-    </style>
+    <link rel="stylesheet" href="index/styles.css">
+	<script async src="index/app.js"></script>
+	<script async  src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 </head>
+
 <body>
+	<div class="home">
+		<div class=home__splash>
+			<div class="home__splash-container container">
+				<div class="home__splash-text-container">
+					<div class="home__splash-text--title">
+						Handwritten Cards
+					</div>
+					<div class="home__splash-text--tagline">
+						Personalised, beautiful, and caring handwritten cards, made with love. Sent to whoever you'd like to see smile.
+					</div>
+					<div class="home__splash-send" ng-click="signup()">
+						Send a card
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class=home__how>
 
-    <div class="container">
-        <div class="jumbotron">
-            <h1>res.sendFile() Works!</h1>
-        </div>
-    </div>
-
+		</div>
+	</div>
 </body>
 </html>

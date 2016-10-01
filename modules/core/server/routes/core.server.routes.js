@@ -16,6 +16,7 @@ module.exports = function (app) {
 	app.route('/smile/*').get(core.renderIndex);
 
 	app.get('/', function (req, res) {
+
 		res.sendFile('index.html', { root: path.join(__dirname, '../../../../public/index') });
 	});
 };
