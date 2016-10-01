@@ -9,27 +9,27 @@
 		// Now set up the states
 		$stateProvider
 		.state('card', {
-			url: '/onboard/card',
+			url: '/smile/card',
 			templateUrl: 'modules/product/client/views/card.client.view.html',
 			controller: 'CardController',
 		})
 		.state('address', {
-			url: '/onboard/address',
+			url: '/smile/address',
 			templateUrl: 'modules/product/client/views/address.client.view.html',
 			controller: 'AddressController',
 		})
 		.state('signup', {
-			url: '/onboard/signup',
+			url: '/smile/signup',
 			templateUrl: 'modules/product/client/views/signup.client.view.html',
 			controller: 'SignupController',
 		})
 		.state('payment', {
-			url: '/onboard/payment',
+			url: '/smile/payment',
 			templateUrl: 'modules/product/client/views/payment.client.view.html',
 			controller: 'PaymentController',
 		})
 		.state('thankyou', {
-			url: '/onboard/thanks',
+			url: '/smile/thanks',
 			templateUrl: 'modules/product/client/views/thanks.client.view.html',
 			controller: 'ThanksController',
 		});
