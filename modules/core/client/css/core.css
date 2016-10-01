@@ -8,9 +8,9 @@ html {
 body {
   padding: 0;
   margin: 0;
+  color: #505050;
   background: url(../img/background/background.jpeg) fixed;
-  background-size: cover;
-  color: #505050; }
+  background-size: cover; }
 
 .row {
   margin-left: 0px;

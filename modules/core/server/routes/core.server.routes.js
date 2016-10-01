@@ -1,5 +1,7 @@
 'use strict';
 
+var path = require('path');
+
 module.exports = function (app) {
 	// Root routing
 	var core = require('../controllers/core.server.controller');
@@ -11,5 +13,9 @@ module.exports = function (app) {
 	app.route('/:url(api|modules|lib)/*').get(core.renderNotFound);
 
 	// Define application route
-	app.route('/*').get(core.renderIndex);
+	app.route('/smile/*').get(core.renderIndex);
+
+	app.get('/', function (req, res) {
+		res.sendFile('index.html', { root: path.join(__dirname, '../../../../public/index') });
+	});
 };
