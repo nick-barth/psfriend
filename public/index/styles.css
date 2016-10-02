@@ -12,7 +12,7 @@ a {
 .home__splash {
     background-image: url(splash.jpg);
     background-size: cover;
-    height: calc(90vh);
+    height: calc(100vh - 3em);
 }
 
 .home__splash-container {
