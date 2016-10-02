@@ -129,6 +129,7 @@ a {
 .home__anchorbar {
 	width:100%;
 	height:3em;
+	background-color: #FF7260;
 	background-color:#129793;
 	color: #FFFAF0;
 	z-index:100;
@@ -175,10 +176,10 @@ a {
     height: 80em;
 }
 .home__faq {
-    background-color: blue;
+    background-color: #FFF5C3;
     height: 80em;
 }
 .home__pricing {
-	background-color: red;
+	background-color: #FFF5C3;
 	height: 80em;
 }
