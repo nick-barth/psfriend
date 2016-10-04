@@ -3,11 +3,11 @@
 
 angular
 	.module('users')
-	.controller('SettingsController', SettingsController);
+	.controller('MyCardsController', MyCardsController);
 
-SettingsController.$inject = ['$scope', '$http', 'Authentication'];
+MyCardsController.$inject = ['$scope', '$http', 'Authentication'];
 
-function SettingsController ($scope, $http, Authentication) {
+function MyCardsController ($scope, $http, Authentication) {
 	if (!user) {
 		state.go('login');
 	}
@@ -28,7 +28,7 @@ function SettingsController ($scope, $http, Authentication) {
 		$http.post('/api/user/cancel', id).success(function (response) {
 			$scope.subs = response.subs;
 		}).error(function (response) {
-			console.log(response);
+			//todo: add error catching on failed cancel, blame stripe
 		});
 	};
 

@@ -11,18 +11,10 @@ routeConfig.$inject = ['$stateProvider'];
 function routeConfig ($stateProvider) {
 	// Users state routing
 	$stateProvider
-	.state('settings', {
-		url: '/settings',
-		templateUrl: 'modules/users/client/views/settings/settings.client.view.html',
-		controller: 'SettingsController',
-		data: {
-			pageTitle: 'Settings'
-		}
-	})
 	.state('my-cards', {
 		url: '/my-cards',
 		templateUrl: 'modules/users/client/views/settings/my-cards.client.view.html',
-		controller: 'SettingsController',
+		controller: 'myCardsController',
 		data: {
 			pageTitle: 'Settings'
 		}
