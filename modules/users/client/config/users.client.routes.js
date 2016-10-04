@@ -14,7 +14,7 @@ function routeConfig ($stateProvider) {
 	.state('my-cards', {
 		url: '/my-cards',
 		templateUrl: 'modules/users/client/views/settings/my-cards.client.view.html',
-		controller: 'myCardsController',
+		controller: 'MyCardsController',
 		data: {
 			pageTitle: 'Settings'
 		}
