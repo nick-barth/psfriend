@@ -5,6 +5,8 @@
 	.module('product.routes')
 	.config(routeConfig);
 
+	//todo: default to /card if no card object is present
+
 	function routeConfig ($stateProvider, $urlRouterProvider) {
 		// Now set up the states
 		$stateProvider
