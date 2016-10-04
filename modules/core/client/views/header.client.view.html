@@ -3,63 +3,19 @@
 		<div ng-href="home" class="header__brand">
 		</div>
 		<div class="header__links">
-			<div ui-sref="home" class="header__link" ng-if="!fixed">
-				Home
+			<div  class="header__link" ng-if="!fixed">
+				<!-- todo: fix link here -> goes to broken home state instead of static site -->
+				<a href="/"> Home </a>
 			</div>
-			<div class='header__link' ng-if="fixed" data-anchor='about'>
-				How it works
+			<div class='header__link' ui-sref="my-cards" ng-show="authentication.user" >
+				My Cards
 			</div>
-			<div class='header__link' ng-if="fixed" data-anchor='skills'>
-				The Writers
-			</div>
-			<div class='header__link' ng-if="fixed" data-anchor="writers">
-				F.A.Q.
-			</div>
-			<div class='header__link' ui-sref="authentication.signin" ng-show="!authentication.user" data-anchor='work'>
+			<div class='header__link' ui-sref="authentication.signin" ng-show="!authentication.user">
 				Sign In
 			</div>
-			<div class='header__link' ng-click="signout()" ng-show="authentication.user" data-anchor='contact'>
+			<div class='header__link' ng-click="signout()" ng-show="authentication.user">
 				Signout
 			</div>
 		</div>
 	</div>
 </div>
-
-
-
-
-
-<!--
-<div ng-controller="HeaderController">
-	<nav class="container" nav-scroller ng-class="{'header--fixed-top' : fixed}" role="navigation">
-			<div ng-href="home" class="header__brand">
-			</div>
-			<ul class="header__links">
-				<li ui-sref="home" class="header__link" ng-if="!fixed">
-					Home
-				</li>
-				<li class='header__link' ng-if="fixed" data-anchor='about'>
-					How it works
-				</li>
-				<li class='header__link' ng-if="fixed" data-anchor='skills'>
-					The Writers
-				</li>
-				<li class='header__link' ng-if="fixed" data-anchor="writers">
-					F.A.Q.
-				</li>
-				<li class='header__link' ui-sref="authentication.signin" ng-hide="vm.authentication.user" data-anchor='work'>
-					Sign In
-				</li>
-				<li class='header__link' ng-href="/api/auth/signout" ng-show="vm.authentication.user" data-anchor='contact'>
-					Signout
-				</li>
-			</ul>
-	</nav>
-</div>
-
-
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    ...
-  </div>
-</nav>
