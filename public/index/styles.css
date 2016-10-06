@@ -42,8 +42,14 @@ a {
 	padding-right:2em;
 }
 
+.home__cta--section {
+	bottom: 0;
+	margin-bottom: 4em;
+	left: calc(50% - 7.5em);
+	position: absolute;
+}
 /*Button*/
-.home__cta {
+.home__cta--absolute {
   position: absolute;
   left: 50%;
   top: 60%;
@@ -171,9 +177,11 @@ a {
 
 .home__about {
     background-color: #FFF5C3;
+	position:relative;
 }
 .home__faq {
-    background-color: #FFF5C3;
+    background-color: #129793;
+	color: #FFF5C3;
 }
 
 .home__section-title {
@@ -191,6 +199,7 @@ a {
 .home__section-subtitle {
 	font-size:.8em;
 
+
 }
 
 .home__section-content {
@@ -203,9 +212,28 @@ a {
 	display:table;
 }
 
+.home__about-content {
+	padding-bottom: 10em;
+}
+
 .home__about-step {
 	display:table-cell;
 	width:33%;
 	text-align:center;
 	padding:2em;
+}
+
+/* FAQ */
+.home__faq {
+	text-align:center;
+	font-size:1.5em;
+}
+
+.home__faq-content {
+	padding:0 2em 2em 2em;
+}
+
+.home__faq-a {
+	padding-top:.5em;
+	padding-bottom:2em;
 }
