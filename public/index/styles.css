@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+	font-family: 'Amatic SC', cursive;
 }
 
 a {
@@ -39,7 +40,6 @@ a {
     max-width: 80em;
 	padding-left:2em;
 	padding-right:2em;
-	font-family: 'Amatic SC', cursive;
 }
 
 /*Button*/
@@ -62,7 +62,6 @@ a {
   transition: .6s;
   overflow: hidden;
   text-align:center;
-  font-family: 'Amatic SC', cursive;
 }
 
 .home__cta-link {
@@ -162,7 +161,6 @@ a {
 	display:table-cell;
 	text-align:center;
 	vertical-align:middle;
-	font-family: 'Amatic SC', cursive;
 	font-size:1.5em;
 	cursor:pointer;
 }
@@ -173,21 +171,41 @@ a {
 
 .home__about {
     background-color: #FFF5C3;
-    height: 80em;
 }
 .home__faq {
     background-color: #FFF5C3;
-    height: 80em;
-}
-.home__pricing {
-	background-color: #FFF5C3;
-	height: 80em;
 }
 
 .home__section-title {
-	
+	font-family: 'Pacifico', cursive;
+	font-size: 2.8rem;
+	margin:auto;
+	text-align:center;
+	padding-top:2em;
+	padding-bottom:2em;
+}
+.home__section-title--blue {
+	color: #129793;
+}
+
+.home__section-subtitle {
+	font-size:.8em;
+
 }
 
 .home__section-content {
 
+}
+
+/* ABOUT */
+
+.home__about-steps {
+	display:table;
+}
+
+.home__about-step {
+	display:table-cell;
+	width:33%;
+	text-align:center;
+	padding:2em;
 }
