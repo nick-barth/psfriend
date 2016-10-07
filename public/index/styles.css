@@ -183,6 +183,10 @@ a {
     background-color: #129793;
 	color: #FFF5C3;
 }
+.home__pricing {
+	background-color: #FFF5C3;
+	position:relative;
+}
 
 .home__section-title {
 	font-family: 'Pacifico', cursive;
@@ -236,4 +240,50 @@ a {
 .home__faq-a {
 	padding-top:.5em;
 	padding-bottom:2em;
+}
+
+/* IMAGES */
+.home__images {
+	display: table;
+	width: 100%;
+}
+.home__image {
+	display:table-cell;
+	width:33.33%;
+}
+.home__image-wrapper {
+	position:relative;
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position: center;
+}
+.home__image-wrapper-1 {
+	background-image: url("splash-1.jpeg");
+}
+.home__image-wrapper-2 {
+	background-image: url("splash-2.jpeg");
+}
+.home__image-wrapper-3 {
+	background-image: url("splash-3.jpeg");
+}
+.home__image-wrapper:before {
+	padding-top: 100%;
+	display: block;
+	content: "";
+}
+
+/* Pricing */
+.home__pricing-content {
+	padding-bottom: 10em;
+	padding-left: 2em;
+	padding-right: 2em;
+	text-align:center;
+}
+.home__pricing-price {
+	font-size:2.5em;
+	text-align:center;
+}
+
+.home__footer {
+
 }
