@@ -11,7 +11,7 @@ a {
 
 
 .home__splash {
-    background-image: url(splash.jpg);
+    background-image: url(imgs/splash.jpg);
     background-size: cover;
     height: calc(100vh - 3em);
 }
@@ -258,13 +258,13 @@ a {
 	background-position: center;
 }
 .home__image-wrapper-1 {
-	background-image: url("splash-1.jpeg");
+	background-image: url("imgs/splash-1.jpeg");
 }
 .home__image-wrapper-2 {
-	background-image: url("splash-2.jpeg");
+	background-image: url("imgs/splash-2.jpeg");
 }
 .home__image-wrapper-3 {
-	background-image: url("splash-3.jpeg");
+	background-image: url("imgs/splash-3.jpeg");
 }
 .home__image-wrapper:before {
 	padding-top: 100%;
