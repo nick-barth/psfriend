@@ -9,6 +9,24 @@ a {
     color: #FFFAF0;
 }
 
+.home__login-button {
+	border: 2px solid #FF7260;
+	color: #FFFAF0;
+	background-color:#FF7260;
+	position:absolute;
+	width:4em;
+	text-align:center;
+	top:2em;
+	right: 5em;
+	cursor:pointer;
+	border-radius:4px;
+}
+
+.home__login-button:hover {
+	background-color:transparent;
+
+}
+
 
 .home__splash {
     background-image: url(imgs/splash.jpg);
@@ -227,6 +245,14 @@ a {
 	padding:2em;
 }
 
+.home__about-image {
+	height:3em;
+	width:3em;
+}
+
+.home__about-image-people {
+	background-image:  url("imgs/icon-people.svg");
+}
 /* FAQ */
 .home__faq {
 	text-align:center;
