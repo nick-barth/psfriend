@@ -24,14 +24,13 @@ a {
 
 .home__login-button:hover {
 	background-color:transparent;
-
 }
 
 
 .home__splash {
     background-image: url(imgs/splash.jpg);
     background-size: cover;
-    height: calc(100vh - 3em);
+    height: calc(100vh);
 }
 
 .home__splash-container {
@@ -70,7 +69,7 @@ a {
 .home__cta--absolute {
   position: absolute;
   left: 50%;
-  top: 60%;
+  top: 65%;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
 }
@@ -255,12 +254,21 @@ a {
 }
 
 .home__about-image {
-	height:3em;
-	width:3em;
+	background-position: center;
+	background-size: cover;
+	margin: auto;
+	height: 8em;
+	width: 7em;
 }
 
-.home__about-image-people {
+.home__about-image--people {
 	background-image:  url("imgs/icon-people.svg");
+}
+.home__about-image--address {
+	background-image:  url("imgs/icon-address.svg");
+}
+.home__about-image--write {
+	background-image:  url("imgs/icon-write.svg");
 }
 /* FAQ */
 .home__faq {
@@ -310,9 +318,10 @@ a {
 /* Pricing */
 .home__pricing-content {
 	padding-bottom: 10em;
-	padding-left: 2em;
-	padding-right: 2em;
 	text-align:center;
+	text-align: center;
+	width: 22em;
+	margin: auto;
 }
 .home__pricing-price {
 	font-size:2.5em;
