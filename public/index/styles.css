@@ -240,6 +240,8 @@ a {
 
 .home__about-steps {
 	display:table;
+	width: 80%;
+	margin: auto;
 }
 
 .home__about-content {
