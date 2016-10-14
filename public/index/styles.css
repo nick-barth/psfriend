@@ -193,9 +193,18 @@ a {
 	color:#FF7260;
 }
 
+.home__border {
+	width:7em;
+	background-image: url("imgs/border.svg");
+	background-position: center;
+	background-size: cover;
+	height:1em;
+}
+
 .home__about {
     background-color: #FFF5C3;
 	position:relative;
+	text-align: center;
 }
 .home__faq {
     background-color: #129793;
@@ -204,15 +213,15 @@ a {
 .home__pricing {
 	background-color: #FFF5C3;
 	position:relative;
+	text-align: center;
 }
 
 .home__section-title {
 	font-family: 'Pacifico', cursive;
 	font-size: 2.8rem;
-	margin:auto;
-	text-align:center;
-	padding-top:2em;
-	padding-bottom:2em;
+	padding-top: .5em;
+	padding-bottom:1em;
+	display: inline-block;
 }
 .home__section-title--blue {
 	color: #129793;
